@@ -1,6 +1,14 @@
 <!DOCTYPE html>
+<html lang="en">
 
 <head>
+  <title>Blockchain @ UCI</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=5.0" />
+  <meta name="theme-color" content="#4C9FC8" />
+  <link type="text/css" rel="stylesheet" href="./styles/main.css" />
+  <link type="text/css" rel="stylesheet" href="./styles/slider.css" />
+  <link type="text/css" rel="stylesheet" href="./styles/components.css" />
   <link rel="shortcut icon" type="image/x-icon"
     href="https://media.discordapp.net/attachments/810799100940255260/896898419279413259/symbol-removebg-preview.png" />
   <meta charset="UTF-8" />
@@ -8,7 +16,7 @@
   <!-- Primary Meta Tags -->
   <title>Blockchain @ UCI</title>
   <meta name="title" content="Blockchain @ UCI">
-  <meta name="description" content="Full site TBA!">
+  <meta name="description" content="The Blockchain club at UC Irvine">
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="Blockchain @ UCI">
@@ -17,49 +25,273 @@
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image">
   <meta property="twitter:title" content="Blockchain @ UCI">
-  <meta property="twitter:description" content="Full site TBA!">
+  <meta property="twitter:description" content="The Blockchain club at UC Irvine">
   <meta property="twitter:image"
     content="https://media.discordapp.net/attachments/810799100940255260/896898419279413259/symbol-removebg-preview.png">
 </head>
 
 <body>
-  <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
-  <script>
-    function addDarkmodeWidget() {
-      const options = {
-        bottom: '24px',
-        right: '24px',
-        left: 'unset',
-        time: '0.4s',
-        mixColor: '#fff',
-        backgroundColor: '#eee9e6',
-        buttonColorDark: '#111619',
-        buttonColorLight: '#eee9e6',
-        saveInCookies: true,
-        label: '🌓',
-        autoMatchOsTheme: true
-      }
-      new Darkmode(options).showWidget();
-    }
-    window.addEventListener('load', addDarkmodeWidget);
-  </script>
-  <link rel="stylesheet" type="text/css" href="style.css">
-  <div class="title">
-  </div>
-  <div class="container">
-    <h1>Blockchain @ UCI</h1>
-  </div>
-  <div class="container">
-    <h3>Full site TBA!</h3>
-  </div>
-  <div class="container">
-    <img
-      src="https://media.discordapp.net/attachments/810799100940255260/896898419279413259/symbol-removebg-preview.png"
-      height="200px" />
-  </div>
-  <div class="container" id="buttons">
-    <a class="btn cta" href="https://forms.gle/A8evL9DrWMzYPXe47">Leadership Application</a>
-    <a class="btn cta" href="https://forms.gle/HRs9oSLR2oBRr37g7">Membership Application</a>
-    <a class="btn cta" href="https://discord.gg/4JWRJqupsY">Discord</a>
-  </div>
+  <!-- MAIN UI ELEMENTS -->
+  <main class="ui-wrapper page-not-loaded">
+    <!-- LOADER -->
+    <div class="loader flex flex--center">
+      <span class="loader__text">BLOCKCHAIN</span>
+    </div>
+    <!-- MAIN MENU -->
+    <div class="menu">
+      <ul class="menu-list">
+        <li class="menu-list__item" data-page="1">ABOUT US</li>
+        <li class="menu-list__item" data-page="2">WHAT WE DO</li>
+        <li class="menu-list__item" data-page="3">MEET THE BOARD</li>
+        <!-- <li class="menu-list__item" data-page="4">PORTFOLIO</li> -->
+        <li class="menu-list__item" data-page="4">CONTACT US</li>
+      </ul>
+    </div>
+    <!-- VIDEO POPUP -->
+    <div class="popup" data-popup="video">
+      <iframe width="60%" height="100%" src="https://5baa06fa.sibforms.com/serve/MUIEAAq85cwSjG9N9sLFqFUSr-rV3dFeMqmlMomGnfPAkSgJ30FUytIK3cEYmoyWfk613vKopO3hWXpo4QAFy-pD5q_ZmIkuSPTRnZzboh-rltBayzxCJXbggRWYpKuWxDO-UBTFnDbemOCDHx6JfJL6h8wTIPrNSPiOx4e-P5rYi721V10WjgcfPaW3cm31yh6sfbRPEcAMUl7G"></iframe>
+    </div>
+    </div>
+    </div>
+    <!-- TEAM POPUP -->
+    <div class="popup" data-popup="team">
+      <div class="popup__inner">
+        <h2 class="popup__title">MEET THE TEAM</h2>
+        <h3 class="popup__subtitle">A great club does not exist without great people</h3>
+        <div class="slider">
+          <div class="slider__arrow slider__arrow-left slider__arrow--disabled" data-follow="centered_y">
+            <img class="slider__arrow-icon" src="./resources/images/icons/arrow.svg" alt="Arrow icon" />
+          </div>
+          <div class="slider__arrow slider__arrow-right" data-follow="centered_y">
+            <img class="slider__arrow-icon" src="./resources/images/icons/arrow.svg" alt="Arrow icon" />
+          </div>
+          <div class="slider__inner" id="slider">
+            <div class="slider__inner" id="slider">
+              <div class="slider__item">
+                <img class="slider__item-image" src="./resources/images/people/bill.jpg" alt="Team photo" />
+                <div class="slider__item-content">
+                  <h2 class="slider__item-name">Bill Maurer</h2>
+                  <h2 class="slider__item-position">Advisor</h2>
+                </div>
+              </div>
+              <div class="slider__item">
+                <img class="slider__item-image" src="./resources/images/people/anish.jpg" alt="Team photo" />
+                <div class="slider__item-content">
+                  <h2 class="slider__item-name">Anish Lathker</h2>
+                  <h2 class="slider__item-position">President</h2>
+                </div>
+              </div>
+              <div class="slider__item">
+                <img class="slider__item-image" src="./resources/images/people/toast.jpg" alt="Team photo" />
+                <div class="slider__item-content">
+                  <h2 class="slider__item-name">Daniel Bo Lee</h2>
+                  <h2 class="slider__item-position">Vice President</h2>
+                </div>
+              </div>
+              <div class="slider__item">
+                <img class="slider__item-image" src="./resources/images/people/kainoa.jpg" alt="Team photo" />
+                <div class="slider__item-content">
+                  <h2 class="slider__item-name">Kainoa Kanter</h2>
+                  <h2 class="slider__item-position">Director of Technology</h2>
+                </div>
+              </div>
+              <div class="slider__item">
+                <img class="slider__item-image" src="./resources/images/people/zack.jpg" alt="Team photo" />
+                <div class="slider__item-content">
+                  <h2 class="slider__item-name">Zack Nguyen</h2>
+                  <h2 class="slider__item-position">Director of Project Management</h2>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- ALL FIXED CONTENT (EG. HEADER, FOOTER) -->
+    <!-- HEADER -->
+    <header class="fixed-content-header">
+      <div class="flex flex--center">
+        <div class="burger" data-follow>
+          <div class="burger__line"></div>
+          <div class="burger__line"></div>
+          <div class="burger__line"></div>
+        </div>
+        <div class="flex flex--center" data-follow><img src="./resources/logo.png" height="100"></div>
+      </div>
+      <button class="fixed-content-header__contact button button--primary" data-follow data-page="4">CONTACT</button>
+    </header>
+    <!-- PAGING -->
+    <div class="fixed-content-paging">
+      <div class="paging__page" data-page="0"></div>
+      <div class="paging__page section--hidden" data-page="1"></div>
+      <div class="paging__page section--hidden" data-page="2"></div>
+      <div class="paging__page section--hidden" data-page="3"></div>
+      <div class="paging__page section--hidden" data-page="4"></div>
+    </div>
+    <!-- FOOTER -->
+    <div class="fixed-content-footer">
+      <div class="social-links">
+        <a class="social-links__anchor" href="">
+          <img class="social-links__image" src="./resources/images/socials/linkedin.svg" alt="Linkedin logo" width="30"
+            height="30">
+        </a>
+        <a class="social-links__anchor" href="">
+          <img class="social-links__image" src="./resources/images/socials/twitter.svg" alt="Twitter logo" width="30"
+            height="30">
+        </a>
+        <a class="social-links__anchor" href="">
+          <img class="social-links__image" src="./resources/images/socials/instagram.svg" alt="Instagram logo"
+            width="30" height="30">
+        </a>
+        <a class="social-links__anchor" href="">
+          <img class="social-links__image" src="./resources/images/socials/discord.svg" alt="Discord logo" width="30"
+            height="30">
+        </a>
+        <a class="social-links__anchor" href="">
+          <img class="social-links__image" src="./resources/images/socials/github.svg" alt="Discord logo" width="30"
+            height="30">
+        </a>
+      </div>
+      <div class="fixed-content-footer__copy">
+        <span class="footer-copy__date"></span>
+        <span class="footer-copy__name">Kainoa Kanter</span>
+      </div>
+    </div>
+    <!-- MAIN CONTENT -->
+    <div class="content">
+      <div class="content-section" data-page="0">
+        <div class="configuration__letters configuration__letters--hidden">
+          <span class="configuration__letters-text">BLOCKCHAIN @ UCI</span>
+        </div>
+        <div class="scroll-letters">
+          <span class="scroll-letters__letter" title="S">S</span>
+          <span class="scroll-letters__letter" title="C">C</span>
+          <span class="scroll-letters__letter" title="R">R</span>
+          <span class="scroll-letters__letter" title="O">O</span>
+          <span class="scroll-letters__letter" title="L">L</span>
+          <span class="scroll-letters__letter" title="L">L</span>
+        </div>
+      </div>
+      <div class="content-section section--hidden" data-page="1">
+        <h1 class="content-section__title">AN ECOSYSTEM FOR BLOCKCHAIN EDUCATION</h1>
+        <p class="content-section__text">Blockchain at UCI is an ecosystem for blockchain education, development, and
+          networking at UC Irvine and surrounding areas. We organize workshops, educational seminars, hackathons, and
+          networking events to facilitate the growth of blockchain awareness, technical understanding, and thorough
+          training.</p>
+        <button class="content-section__button button button--icon" id="button_email_list">
+          <img class="button__image" src="./resources/images/icons/email.svg" alt="Email icon" />
+          <span class="button__text">KEEP UP TO DATE!</span>
+        </button>
+      </div>
+      <div class="content-section section--hidden" data-page="2">
+        <h1 class="content-section__title">WHAT WE DO</h1>
+        <p class="content-section__text">Blockchain at UCI collaborates with industry leaders to host events with
+          various blockchain-oriented companies, in pursuit of identifying efficient and practical blockchain
+          technologies, and helping students in Orange County develop the necessary skills and knowledge to participate
+          in new, exciting opportunities surrounding blockchain. We hope to help introduce the next generation of
+          blockchain leaders.</p>
+        </p>
+        <div class="content-services">
+          <div class="content-services__service">
+            <img class="content-service__image" src="./resources/images/icons/boba.svg" alt="Marketing icon" />
+            <span class="content-service__text">MEETINGS</span>
+            <ul class="extended-services">
+              <li class="extended-services__service">General meetings</li>
+              <li class="extended-services__service">Socials</li>
+              <li class="extended-services__service">Bigger events</li>
+              <li class="extended-services__service">Conferences</li>
+              <li class="extended-services__service">Hackathons</li>
+            </ul>
+          </div>
+          <div class="content-services__service">
+            <img class="content-service__image" src="./resources/images/icons/marketing.svg" alt="Marketing icon" />
+            <span class="content-service__text">SPEAKERS</span>
+            <ul class="extended-services">
+              <li class="extended-services__service">Blockchain<br>companies</li>
+            </ul>
+          </div>
+          <div class="content-services__service">
+            <img class="content-service__image" src="./resources/images/icons/education.svg" alt="Marketing icon" />
+            <span class="content-service__text">EDUCATION</span>
+            <ul class="extended-services">
+              <li class="extended-services__service">Seminars</li>
+              <li class="extended-services__service">Guest<br>speakers</li>
+            </ul>
+          </div>
+          <div class="content-services__service">
+            <img class="content-service__image" src="./resources/images/icons/research.svg" alt="Marketing icon" />
+            <span class="content-service__text">Research</span>
+            <ul class="extended-services">
+              <li class="extended-services__service">New blockchain<br>technologies</li>
+              <li class="extended-services__service">Job<br>opportunities<br>for members</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="content-section section--hidden content-section--left-align" data-page="3">
+        <div class="content-holder--left-align">
+          <h1 class="content-section__title">MEET THE TEAM</h1>
+          <p class="content-section__text text-indent content-section__text-team">We value all of our members, but it's
+            the team of advisors and board members that keep the life blood of this club flowing.</p>
+          <button class="content-section__button button button--secondary" id="button_team">VIEW TEAM</button>
+        </div>
+        <div class="content-section__images">
+          <div class="content-section__image-holder">
+            <img class="content-section__image" src="./resources/images/people/kainoa.jpg" alt="Team photo" />
+          </div>
+          <div class="content-section__image-holder">
+            <img class="content-section__image" src="./resources/images/people/toast.jpg" alt="Team photo" />
+          </div>
+          <div class="content-section__image-holder">
+            <img class="content-section__image" src="./resources/images/people/anish.jpg" alt="Team photo" />
+          </div>
+          <div class="content-section__image-holder">
+            <img class="content-section__image" src="./resources/images/people/bill.jpg" alt="Team photo" />
+          </div>
+        </div>
+      </div>
+      <!-- <div class="content-section section--hidden" data-page="4">
+          <h1 class="content-section__title">PORTFOLIO</h1>
+          <p class="content-section__text">We are proud of our work. With over 200 happy customers we are eager to show you the art that we produce. Check out our portfolio below.</p>
+          <div class="content-portfolio__images flex">
+            <div class="content-portfolio__image-holder">
+              <span class="content-portfolio__name text-indent">Mobile Design</span>
+              <img class="content-portfolio__image" src="./resources/images/portfolio/portfolio1.jpg" alt="Portfolio image" />
+            </div>
+            <div class="content-portfolio__image-holder">
+              <span class="content-portfolio__name text-indent">Web Design</span>
+              <img class="content-portfolio__image" src="./resources/images/portfolio/portfolio2.jpg" alt="Portfolio image" />
+            </div>
+            <div class="content-portfolio__image-holder">
+              <span class="content-portfolio__name text-indent">Advanced Animations</span>
+              <img class="content-portfolio__image" src="./resources/images/portfolio/portfolio3.jpg" alt="Portfolio image" />
+            </div>
+          </div>
+          <a class="content-section__button button button--icon" href="https://github.com/" rel="noopener">
+            <span class="button__text">VIEW PORTFOLIO</span>
+            <img class="button__image" src="./resources/images/icons/external.svg" alt="External icon"/>
+          </a>
+        </div> -->
+      <div class="content-section section--hidden" data-page="4">
+        <h1 class="content-section__title">CONTACT US</h1>
+        <p class="content-section__text">We’re here to help and answer any question you might have. We look forward to
+          hearing from you. You can also find us on social media below.</p>
+        <div class="content-section__buttons-holder">
+          <a class="content-section__button button button--icon" href="mailto:YOUREMAILHERE">
+            <img class="button__image" src="./resources/images/icons/email.svg" alt="Email icon" />
+            <span class="button__text">EMAIL US</span>
+            <span class="button__invisible-email">blockchainatuci@gmail.com</span>
+          </a>
+          <a class="content-section__button button button--icon" href="">
+            <img class="button__image" src="./resources/images/socials/linkedin.svg" alt="Linkedin icon" />
+            <span class="button__text">CONNECT ON LINKEDIN</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script type="module" src="./main.js"></script>
 </body>
+
+</html>
