@@ -991,12 +991,12 @@ iframe {
   .content-section__image-text-social--bill {
     position: absolute;
     bottom: 45%;
-    left: 340%;
+    left: 330%;
   }
   .content-section__image-text-social {
     position: absolute;
     bottom: 40%;
-    left: 340%;
+    left: 330%;
   }
   .content-section__image-text-name {
     transform: translate(50%, -80%);
