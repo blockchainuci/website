@@ -341,7 +341,7 @@ function windowWheelOrTouch (e) {
   setTimeout(() => { timeoutActive = false }, 1500)
 
   if (e.deltaY > 0 || (e.touches && e.touches[0].pageY < touchStartPosition)) {
-    if (sceneMovedAmmount ===4) return
+    if (sceneMovedAmmount === 5) return
     sceneMovedAmmount++
     sceneMovedAmmount = Math.min(sceneMovedAmmount, 5)
     moveScene()
