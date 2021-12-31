@@ -834,6 +834,12 @@ iframe {
   transition: 200ms var(--contentTransitionBezier);
 }
 
+.content-section__image-text-social--bill {
+  position: absolute;
+  bottom: 14%;
+  left: 116%;
+}
+
 .content-section__image-text-name {
   position: absolute;
   bottom: -100px;
@@ -862,6 +868,11 @@ iframe {
   font: 600 20px Roboto, sans-serif;
   letter-spacing: 1px;
   transition: 200ms var(--contentTransitionBezier);
+}
+
+.content-section__image-text-social {
+  position: absolute;
+  bottom: -115px;
 }
 
 .content-section__image {
@@ -976,6 +987,16 @@ iframe {
   .content-section__image-text-title--bill {
     transform: translate(-40%, 15%);
     font-size: 15px;
+  }
+  .content-section__image-text-social--bill {
+    position: absolute;
+    bottom: 45%;
+    left: 340%;
+  }
+  .content-section__image-text-social {
+    position: absolute;
+    bottom: 40%;
+    left: 340%;
   }
   .content-section__image-text-name {
     transform: translate(50%, -80%);
