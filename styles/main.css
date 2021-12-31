@@ -753,19 +753,23 @@ iframe {
   transition: 400ms 100ms var(--contentTransitionBezier);
 }
 .content-section__image-holder:nth-of-type(2) {
-  transform: translate(-500px, 175%);
+  transform: translate(-325%, 175%);
   transition: 400ms 150ms var(--contentTransitionBezier);
 }
 .content-section__image-holder:nth-of-type(3) {
-  transform: translate(-200px, 175%);
+  transform: translate(-180%, 175%);
   transition: 400ms 200ms var(--contentTransitionBezier);
 }
 .content-section__image-holder:nth-of-type(4) {
-  transform: translate(100px, 175%);
+  transform: translate(-35%, 175%);
   transition: 400ms 250ms var(--contentTransitionBezier);
 }
 .content-section__image-holder:nth-of-type(5) {
-  transform: translate(400px, 175%);
+  transform: translate(110%, 175%);
+  transition: 400ms 250ms var(--contentTransitionBezier);
+}
+.content-section__image-holder:nth-of-type(6) {
+  transform: translate(255%, 175%);
   transition: 400ms 250ms var(--contentTransitionBezier);
 }
 
@@ -865,7 +869,7 @@ iframe {
   flex-direction: column;
   justify-content: center;
   color: var(--secondaryColor);
-  font: 600 20px Roboto, sans-serif;
+  font: 600 18px Roboto, sans-serif;
   letter-spacing: 1px;
   transition: 200ms var(--contentTransitionBezier);
 }
@@ -980,6 +984,9 @@ iframe {
   }
   .content-section__image-holder:nth-of-type(5) {
     transform: translate(-140%, 300px);
+  }
+  .content-section__image-holder:nth-of-type(6) {
+    transform: translate(-140%, 375px);
   }
   .content-section__image-text-name--bill{
     transform: translate(-8%, 25%);
