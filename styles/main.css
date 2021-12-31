@@ -872,7 +872,8 @@ iframe {
 
 .content-section__image-text-social {
   position: absolute;
-  bottom: -115px;
+  bottom: -120px;
+  left: 45%;
 }
 
 .content-section__image {
