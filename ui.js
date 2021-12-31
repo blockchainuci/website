@@ -14,7 +14,7 @@ let popup = null
 export default class UI {
   constructor (callback) {
     constructorCb = callback
-    
+
     followElements = uiWrapper.querySelectorAll('[data-follow]')
     this.getFollowElementsPosition()
 
@@ -50,7 +50,7 @@ export default class UI {
     followElements.forEach((element, index) => {
       const elementPositions = followElementsPositions[index]
       // If cursor is close to the button element then move the button closer to the cursor;
-      if (mouseLeft > elementPositions.left - 100 && mouseLeft < elementPositions.right + 100 && 
+      if (mouseLeft > elementPositions.left - 100 && mouseLeft < elementPositions.right + 100 &&
           mouseTop > elementPositions.top - 100 && mouseTop < elementPositions.bottom + 100) {
         const moveX = (elementPositions.left - mouseLeft) / 10
         const moveY = (elementPositions.top - mouseTop) / 10
@@ -72,7 +72,7 @@ export default class UI {
 
   mainLetters2DAnimation (e) {
     const letters = document.querySelector('.configuration__letters')
-    
+
     const xCenter = window.innerWidth / 2
     const yCenter = window.innerHeight / 2
     const LettersXPosition = xCenter - e.clientX
@@ -81,7 +81,7 @@ export default class UI {
   }
 
   showPopup (popupType, createCallback, destroyCallback) {
-    if (typeof createCallback === 'function') createCallback() 
+    if (typeof createCallback === 'function') createCallback()
     popup = uiWrapper.querySelector(`[data-popup=${popupType}]`)
     popup.classList.add('popup--active')
     // First remove display: none, then add animated class;
