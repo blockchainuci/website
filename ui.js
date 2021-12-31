@@ -25,7 +25,7 @@ export default class UI {
       { selector: '.menu-list', cb: this.onMenuPagingClick.bind(this) },
       { selector: '#button_email_list', cb: this.showPopup.bind(this, 'video', this.initVideo, this.destoryVideo) },
       // { selector: '#button_offers', cb: this.showPopup.bind(this, 'offers') },
-      { selector: '#button_team', cb: this.showPopup.bind(this, 'team', this.initSlider, this.destroySlider) }
+      // { selector: '#button_team', cb: this.showPopup.bind(this, 'team', this.initSlider, this.destroySlider) }
     ]
     events.forEach(event => {
       const element = uiWrapper.querySelector(event.selector)
