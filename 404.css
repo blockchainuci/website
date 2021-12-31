@@ -187,22 +187,6 @@ body {
     }
 }
 
-#astro_fog {
-    animation: breathing_animation 1s infinite ease-in-out;
-    opacity: 0;
-    transition: all .8s
-}
-
-@keyframes breathing_animation {
-    from {
-        opacity: 1
-    }
-
-    to {
-        opacity: 0
-    }
-}
-
 .error_404_letter h1 {
     font-family: Roboto, sans-serif;
     font-size: 300px;
