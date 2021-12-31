@@ -39,7 +39,7 @@ let touchStartPosition
 window.addEventListener('load', () => {
   const uiWrapper = document.querySelector('.ui-wrapper')
   uiWrapper.classList.remove('page-not-loaded')
-  // Loading animation lasts for 3s;
+  // Loading animation lasts for 1s;
   setTimeout(() => {
     init()
     animate()
@@ -343,7 +343,7 @@ function windowWheelOrTouch (e) {
   if (e.deltaY > 0 || (e.touches && e.touches[0].pageY < touchStartPosition)) {
     if (sceneMovedAmmount ===4) return
     sceneMovedAmmount++
-    sceneMovedAmmount = Math.min(sceneMovedAmmount, 4)
+    sceneMovedAmmount = Math.min(sceneMovedAmmount, 5)
     moveScene()
     ui.ui_moveScene('down')
     return
