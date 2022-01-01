@@ -971,22 +971,22 @@ iframe {
     left: 50%;
   }
   .content-section__image-holder:nth-of-type(1) {
-    transform: translate(-140%, 0px);
+    transform: translate(-140%, -75px);
   }
   .content-section__image-holder:nth-of-type(2) {
-    transform: translate(-140%, 75px);
+    transform: translate(-140%, 0px);
   }
   .content-section__image-holder:nth-of-type(3) {
-    transform: translate(-140%, 150px);
+    transform: translate(-140%, 75px);
   }
   .content-section__image-holder:nth-of-type(4) {
-    transform: translate(-140%, 225px);
+    transform: translate(-140%, 150px);
   }
   .content-section__image-holder:nth-of-type(5) {
-    transform: translate(-140%, 300px);
+    transform: translate(-140%, 225px);
   }
   .content-section__image-holder:nth-of-type(6) {
-    transform: translate(-140%, 375px);
+    transform: translate(-140%, 300px);
   }
   .content-section__image-text-name--bill{
     transform: translate(-8%, 25%);
@@ -1043,6 +1043,9 @@ iframe {
     width: 20px;
     height: 2px;
     background: var(--primaryBlackColor);
+  }
+  #meet-the-team-title {
+    top: -10%;
   }
 }
 
