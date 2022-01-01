@@ -753,23 +753,23 @@ iframe {
   transition: 400ms 100ms var(--contentTransitionBezier);
 }
 .content-section__image-holder:nth-of-type(2) {
-  transform: translate(-325%, 175%);
+  transform: translate(-325%, 125%);
   transition: 400ms 150ms var(--contentTransitionBezier);
 }
 .content-section__image-holder:nth-of-type(3) {
-  transform: translate(-180%, 175%);
+  transform: translate(-180%, 125%);
   transition: 400ms 200ms var(--contentTransitionBezier);
 }
 .content-section__image-holder:nth-of-type(4) {
-  transform: translate(-35%, 175%);
+  transform: translate(-35%, 125%);
   transition: 400ms 250ms var(--contentTransitionBezier);
 }
 .content-section__image-holder:nth-of-type(5) {
-  transform: translate(110%, 175%);
+  transform: translate(110%, 125%);
   transition: 400ms 250ms var(--contentTransitionBezier);
 }
 .content-section__image-holder:nth-of-type(6) {
-  transform: translate(255%, 175%);
+  transform: translate(255%, 125%);
   transition: 400ms 250ms var(--contentTransitionBezier);
 }
 
