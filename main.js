@@ -2,7 +2,7 @@
 const configuration = {
   SiteName: 'BLOCKCHAIN\n      AT UCI',
   Use2DTextOver3D: false, // Change to true if you want 2D over 3D
-  SiteNameSize: 0.6, // Between 0 and +
+  SiteNameSize: 0.45, // Between 0 and +
   NumberOfVerticalLines: 20,
   NumberOfDots: 2000,
   colors: {
