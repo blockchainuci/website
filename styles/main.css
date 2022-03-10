@@ -911,8 +911,8 @@ iframe {
 }
 
 .content-portfolio__image-holder {
-  width: 250px;
-  height: 350px;
+  width: 200px;
+  height: 300px;
   margin-right: 120px;
   border-radius: 20px;
   border-color: var(--primaryColor);
@@ -973,7 +973,7 @@ iframe {
 
 /***** MEDIA QUERIES *****/
 
-@media only screen and (max-width: 1100px) {
+@media only screen and (max-width: 800px) {
   .menu-list__item {
     font: 900 9vw Roboto, sans-serif;
   }
