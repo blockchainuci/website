@@ -906,6 +906,10 @@ iframe {
 
 /* Content portfolio section */
 
+.content-portfolio__images_holder {
+  margin-top: -80px;
+}
+
 .content-portfolio__images {
   margin-bottom: -80px;
 }
