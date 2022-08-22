@@ -755,7 +755,7 @@ iframe {
 
 .content-section__image-holder {
   height: 90px;
-  width: 90px;
+  width: 100px;
   border-radius: 50%;
   flex-basis: 50%;
   position: absolute;
@@ -763,41 +763,41 @@ iframe {
   box-shadow: 0 0 20px 5px rgba(0, 0, 0, 1);
 }
 .content-section__image-holder:nth-of-type(1) {
-  transform: translate(-500%, 10%);
+  transform: translate(-500%, 40%);
   transition: 400ms 100ms var(--contentTransitionBezier);
 }
 .content-section__image-holder:nth-of-type(2) {
-  transform: translate(-500%, 150%);
+  transform: translate(-360%, 40%);
   transition: 400ms 150ms var(--contentTransitionBezier);
 }
 .content-section__image-holder:nth-of-type(3) {
-  transform: translate(-375%, 150%);
+  transform: translate(-220%, 40%);
   transition: 400ms 200ms var(--contentTransitionBezier);
 }
 .content-section__image-holder:nth-of-type(4) {
-  transform: translate(-250%, 150%);
+  transform: translate(-80%, 40%);
   transition: 400ms 250ms var(--contentTransitionBezier);
 }
 .content-section__image-holder:nth-of-type(5) {
-  transform: translate(-125%, 150%);
+  transform: translate(60%, 40%);
   transition: 400ms 250ms var(--contentTransitionBezier);
 }
 .content-section__image-holder:nth-of-type(6) {
-  transform: translate(0%, 150%);
+  transform: translate(200%, 40%);
   transition: 400ms 250ms var(--contentTransitionBezier);
 }
 .content-section__image-holder:nth-of-type(7) {
-  transform: translate(125%, 150%);
+  transform: translate(340%, 40%);
   transition: 400ms 250ms var(--contentTransitionBezier);
 }
-.content-section__image-holder:nth-of-type(8) {
-  transform: translate(250%, 150%);
+/* .content-section__image-holder:nth-of-type(8) {
+  transform: translate(375%, 1400%);
   transition: 400ms 250ms var(--contentTransitionBezier);
 }
 .content-section__image-holder:nth-of-type(9) {
-  transform: translate(375%, 150%);
+  transform: translate(500%, 40%);
   transition: 400ms 250ms var(--contentTransitionBezier);
-}
+} */
 
 .content-section__image-text-name--bill {
   position: absolute;
@@ -1016,7 +1016,7 @@ iframe {
     left: 50%;
   }
   .content-section__image-holder:nth-of-type(1) {
-    transform: translate(-140%, -75px);
+    transform: translate(-140%, 0px);
   }
   .content-section__image-holder:nth-of-type(2) {
     transform: translate(-140%, 0px);
