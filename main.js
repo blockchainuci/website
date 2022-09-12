@@ -160,6 +160,23 @@ function loadMainLetters () {
     const points = new THREE.Points(bufferGeometry, pointsMaterial)
     scene.add(points)
 
+
+    // const bufferGeometry = new THREE.BufferGeometry()
+    // bufferGeometry.setAttribute('position', new THREE.Float32BufferAttribute(vertices, 3))
+    // // const pointSprite = new THREE.TextureLoader().load('resources/images/icons/pointImg.png')
+    // const racaPointSprite = new THREE.TextureLoader().load('resources/images/sponsors/raca.png')
+    // const racaPointsMaterial = new THREE.PointsMaterial({size: 0.7, map: racaPointSprite, transparent: true, alphaTest: 0.5})
+    // const racaPoints = new THREE.Points(bufferGeometry, racaPointsMaterial)
+    // const tronPointSprite = new THREE.TextureLoader().load('resources/images/sponsors/tron.png')
+    // const tronPointsMaterial = new THREE.PointsMaterial({size: 0.7, map: tronPointSprite, transparent: true, alphaTest: 0.5})
+    // const tronPoints = new THREE.Points(bufferGeometry, tronPointsMaterial)
+    // const expoversePointSprite = new THREE.TextureLoader().load('resources/images/sponsors/expoverse.png')
+    // const expoversePointsMaterial = new THREE.PointsMaterial({size: 0.7, map: expoversePointSprite, transparent: true, alphaTest: 0.5})
+    // const expoversePoints = new THREE.Points(bufferGeometry, expoversePointsMaterial)
+    // scene.add(racaPoints)
+    // scene.add(tronPoints)
+    // scene.add(expoversePoints)
+
     windowResize()
   })
 }

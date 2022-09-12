@@ -234,6 +234,7 @@ canvas {
   display: flex;
 }
 .menu-opened .scroll-letters,
+.menu-opened .sponsor-logos,
 .menu-opened .paging__page,
 .menu-opened .fixed-content-header__contact,
 .menu-opened .fixed-content-paging {
@@ -464,6 +465,17 @@ iframe {
     1px 10px 1px var(--primaryBoldColor), 1px 18px 6px rgba(16, 16, 16, 0.4),
     1px 22px 10px rgba(16, 16, 16, 0.2), 1px 25px 35px rgba(16, 16, 16, 0.2),
     1px 30px 60px rgba(16, 16, 16, 0.4);
+}
+
+.sponsor-logos {
+  position: fixed;
+  position: absolute;
+  bottom: 2rem;
+  overflow: hidden;
+}
+
+.sponsor-logos__logo {
+  padding: 1rem;
 }
 
 .scroll-letters {
