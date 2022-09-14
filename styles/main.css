@@ -467,11 +467,10 @@ iframe {
     1px 30px 60px rgba(16, 16, 16, 0.4);
 }
 
-.sponsor-logos {
-  position: fixed;
+.fall-recruitment {
+  display: flex;
   position: absolute;
   bottom: 2rem;
-  overflow: hidden;
 }
 
 .sponsor-logos__logo {
