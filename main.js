@@ -2,7 +2,7 @@
 const configuration = {
   SiteName: 'BLOCKCHAIN\n      AT UCI',
   Use2DTextOver3D: false, // Change to true if you want 2D over 3D
-  SiteNameSize: 0.45, // Between 0 and +
+  SiteNameSize: window.innerWidth > 600 ? 0.45 : 0.65, // Between 0 and +
   NumberOfVerticalLines: 20,
   NumberOfDots: 2000,
   colors: {
@@ -358,9 +358,9 @@ function windowWheelOrTouch (e) {
   setTimeout(() => { timeoutActive = false }, 1500)
 
   if (e.deltaY > 0 || (e.touches && e.touches[0].pageY < touchStartPosition)) {
-    if (sceneMovedAmmount === 5) return
+    if (sceneMovedAmmount === 7) return
     sceneMovedAmmount++
-    sceneMovedAmmount = Math.min(sceneMovedAmmount, 5)
+    sceneMovedAmmount = Math.min(sceneMovedAmmount, 7)
     moveScene()
     ui.ui_moveScene('down')
     return

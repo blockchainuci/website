@@ -156,9 +156,11 @@ export default class UI {
   }
 
   checkContentVisibility (direction) {
+
     const contentSections = uiWrapper.querySelectorAll('[data-page]')
     const animateSection = section => {
       // Add different class depending on scroll direction.
+
       if (direction === 'down')  {
         section.classList.add('section--hidden')
         section.classList.remove('section--hidden-reverse')
