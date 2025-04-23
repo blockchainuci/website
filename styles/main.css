@@ -377,7 +377,10 @@ iframe {
     display: inline-block;
     text-decoration: none;
   }
-  
+
+  .sponsor-logos__logo {
+    padding: 2.5rem;
+  }
 }
 
 /* Styles for screens 600px and smaller */
@@ -432,6 +435,32 @@ iframe {
     margin-left: 90px;
     vertical-align: bottom;
     cursor: pointer;
+  }
+  
+  .sponsor-logos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px 0;
+  }
+
+  .sponsor-logos__logo {
+    width: 33.3333%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem;
+  }
+
+  .sponsor-logos__logo:nth-child(4),
+  .sponsor-logos__logo:nth-child(5) {
+    width: 40%;
+  }
+
+  .sponsor-logos__logo img {
+    max-width: 80px;
+    width: 110%;
+    height: auto;
   }
 }
 
@@ -565,10 +594,6 @@ iframe {
   display: flex;
   position: absolute;
   bottom: 2rem;
-}
-
-.sponsor-logos__logo {
-  padding: 1rem;
 }
 
 .scroll-letters {
