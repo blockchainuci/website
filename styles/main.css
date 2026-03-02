@@ -716,6 +716,76 @@ iframe {
     var(--contentTransitionBezier);
 }
 
+.content-section__title--sub {
+  font-size: 28px;
+  margin-top: 40px;
+}
+
+/* Grid layout for large teams */
+.content-section__images--grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px 20px;
+  width: 90%;
+}
+
+/* Turn each card into a column flex container */
+.content-section__images--grid .content-section__image-holder {
+  position: relative !important;
+  left: auto !important;
+  transform: none !important;
+  width: 120px !important;
+  height: auto !important;
+  flex: 0 0 120px !important;
+  display: flex !important;
+  flex-direction: column;
+  align-items: center;
+  border: none !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  overflow: visible !important;
+  margin-bottom: 0;
+  transition: opacity 400ms 100ms var(--contentTransitionBezier) !important;
+}
+
+.content-section.section--hidden .content-section__images--grid .content-section__image-holder {
+  opacity: 0;
+}
+
+/* Move circle styling to the image itself */
+.content-section__images--grid .content-section__image {
+  width: 100px !important;
+  height: 100px !important;
+  border-radius: 50% !important;
+  border: 3px solid var(--primaryBlackColor) !important;
+  box-shadow: 0 0 20px 5px rgba(0, 0, 0, 1) !important;
+  flex-shrink: 0;
+}
+
+/* Text flows naturally below the image */
+.content-section__images--grid .content-section__image-text-name {
+  position: static !important;
+  transform: none !important;
+  width: 100% !important;
+  height: auto !important;
+  text-align: center;
+  margin-top: 10px;
+  white-space: normal;
+  justify-content: flex-start;
+}
+
+.content-section__images--grid .content-section__image-text-title {
+  position: static !important;
+  transform: none !important;
+  width: 100% !important;
+  height: auto !important;
+  text-align: center;
+  margin-top: 2px;
+  white-space: normal;
+  justify-content: flex-start;
+}
+
 .content-section__text {
   width: 70%;
   color: var(--secondaryColor);
