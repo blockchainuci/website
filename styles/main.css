@@ -574,6 +574,31 @@ iframe {
   padding: 1rem;
 }
 
+.sponsor-logos__logo img {
+  max-width: 100%;
+  height: auto;
+}
+
+@media only screen and (max-width: 600px) {
+  .sponsor-logos {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .sponsor-logos--wrap {
+    max-width: 100%;
+  }
+
+  .sponsor-logos__logo {
+    padding: 0.6rem;
+  }
+
+  .sponsor-logos__logo img {
+    max-width: 90px;
+    height: auto;
+  }
+}
+
 .scroll-letters {
   display: flex;
   position: absolute;
