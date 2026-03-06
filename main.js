@@ -34,6 +34,7 @@ const mainGeomertries = []
 let mainLettersMesh
 
 let touchStartPosition
+let pendingMouseEvent = null
 
 // Wait for page to load
 window.addEventListener('load', () => {
@@ -69,7 +70,7 @@ function init() {
   }
 
   renderer = new THREE.WebGLRenderer({antialiasing:true});
-  renderer.setPixelRatio(window.devicePixelRatio * 1.5) // 1.5x rendering for SSAA.
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
   renderer.setSize(window.innerWidth, window.innerHeight)
   document.body.appendChild(renderer.domElement)
 
@@ -95,6 +96,16 @@ function render (time) {
   mainGeomertries.forEach((geometry, index) => {
     geometry.scale.x = Math.sin(time / 2 + index * 3) * 0.5 + 0.5
   })
+
+  // Apply pending mouse event once per frame (throttles to render rate)
+  if (pendingMouseEvent && sceneMovedAmmount === 0) {
+    const xCenter = window.innerWidth / 2
+    const yCenter = window.innerHeight / 2
+    camera.position.x = -(xCenter - pendingMouseEvent.clientX) / 100
+    camera.position.y = (yCenter - pendingMouseEvent.clientY) / 100
+    camera.lookAt(scene.position)
+    pendingMouseEvent = null
+  }
 
   renderer.render(scene, camera)
 }
@@ -358,9 +369,9 @@ function windowWheelOrTouch (e) {
   setTimeout(() => { timeoutActive = false }, 1500)
 
   if (e.deltaY > 0 || (e.touches && e.touches[0].pageY < touchStartPosition)) {
-    if (sceneMovedAmmount === 7) return
+    if (sceneMovedAmmount === 8) return
     sceneMovedAmmount++
-    sceneMovedAmmount = Math.min(sceneMovedAmmount, 7)
+    sceneMovedAmmount = Math.min(sceneMovedAmmount, 8)
     moveScene()
     ui.ui_moveScene('down')
     return
@@ -375,14 +386,5 @@ function windowWheelOrTouch (e) {
 
 function mouseMove (e) {
   ui.ui_moveEvent(e, configuration.Use2DTextOver3D)
-  if (sceneMovedAmmount > 0) return
-
-  const xCenter = window.innerWidth / 2
-  const yCenter = window.innerHeight / 2
-  const CameraXPosition = xCenter - e.clientX
-  const CameraYPosition = yCenter - e.clientY
-
-  camera.position.x = -CameraXPosition / 100
-  camera.position.y = CameraYPosition / 100
-  camera.lookAt(scene.position)
+  pendingMouseEvent = e
 }

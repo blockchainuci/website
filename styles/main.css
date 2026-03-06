@@ -96,10 +96,6 @@ canvas {
   content: " - Website made by Kainoa";
 }
 
-#social-discord:hover:after {
-  background: url("resources/images/socials/discordspin.gif") no-repeat !important;
-}
-
 .text-indent {
   border-left: 3px solid var(--primaryBoldColor);
   padding-left: 10px;
@@ -565,6 +561,13 @@ iframe {
   display: flex;
   position: absolute;
   bottom: 2rem;
+}
+
+.sponsor-logos--wrap {
+  flex-wrap: wrap;
+  max-width: 700px;
+  justify-content: center;
+  margin: 0 auto;
 }
 
 .sponsor-logos__logo {

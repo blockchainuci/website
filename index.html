@@ -11,10 +11,7 @@
 		<link type="text/css" rel="stylesheet" href="./styles/slider.css" />
 		<link type="text/css" rel="stylesheet" href="./styles/components.css" />
 		<link rel="shortcut icon" type="image/x-icon" href="resources/favicon.ico" />
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<!-- Primary Meta Tags -->
-		<title>Blockchain at UCI</title>
 		<meta name="title" content="Blockchain at UCI">
 		<meta name="description" content="The Blockchain club at UC Irvine">
 		<!-- Open Graph / Facebook -->
@@ -50,21 +47,6 @@
 		<!-- / Fathom -->
 	</head>
 	<body>
-		<!-- Fathom - simple website analytics - https://github.com/usefathom/fathom -->
-		<script>
-			(function (f, a, t, h, o, m) {
-			  a[h] = a[h] || function () {
-			    (a[h].q = a[h].q || []).push(arguments)
-			  };
-			  o = f.createElement('script'),
-			    m = f.getElementsByTagName('script')[0];
-			  o.async = 1; o.src = t; o.id = 'fathom-script';
-			  m.parentNode.insertBefore(o, m)
-			})(document, window, '//fathom.t1c.dev/tracker.js', 'fathom');
-			fathom('set', 'siteId', 'HFPFQ');
-			fathom('trackPageview');
-		</script>
-		<!-- / Fathom -->
 		<!-- MAIN UI ELEMENTS -->
 		<main class="ui-wrapper page-not-loaded">
 			<!-- LOADER -->
@@ -80,15 +62,14 @@
 					<li class="menu-list__item" data-page="4">ADVISORS</li>
 					<li class="menu-list__item" data-page="5">MAJOR EVENTS</li>
 					<li class="menu-list__item" data-page="6">SPONSORS</li>
-					<li class="menu-list__item" data-page="7">CONTACT US</li>
+					<li class="menu-list__item" data-page="7">WHERE WE'VE WORKED</li>
+					<li class="menu-list__item" data-page="8">CONTACT US</li>
 				</ul>
 			</div>
 			<!-- VIDEO POPUP -->
 			<div class="popup" data-popup="video">
 				<iframe width="60%" height="100%" title="Signup form"
 					src="https://5baa06fa.sibforms.com/serve/MUIEAAq85cwSjG9N9sLFqFUSr-rV3dFeMqmlMomGnfPAkSgJ30FUytIK3cEYmoyWfk613vKopO3hWXpo4QAFy-pD5q_ZmIkuSPTRnZzboh-rltBayzxCJXbggRWYpKuWxDO-UBTFnDbemOCDHx6JfJL6h8wTIPrNSPiOx4e-P5rYi721V10WjgcfPaW3cm31yh6sfbRPEcAMUl7G"></iframe>
-			</div>
-			</div>
 			</div>
 			<!-- ALL FIXED CONTENT (EG. HEADER, FOOTER) -->
 			<!-- HEADER -->
@@ -102,10 +83,8 @@
 					<div class="flex flex--center" data-follow><img src="./resources/logo.png" height="100" alt="Logo"></div>
 				</div>
 				<div class="fixed-content-header__contact">
-					<a href="https://forms.gle/oj9doXsTd8nk5McY7" target="_blank">
-					<button class="button button--primary" data-follow data-page="7">SIGNUP</button>
-					</a>
-					<button class="button button--primary" data-follow data-page="7">CONTACT</button>
+
+					<button class="button button--primary" data-follow data-page="8">CONTACT</button>
 				</div>
 			</header>
 			<!-- PAGING -->
@@ -118,6 +97,7 @@
 				<div class="paging__page section--hidden" data-page="5"></div>
 				<div class="paging__page section--hidden" data-page="6"></div>
 				<div class="paging__page section--hidden" data-page="7"></div>
+				<div class="paging__page section--hidden" data-page="8"></div>
 			</div>
 			<!-- FOOTER -->
 			<div class="fixed-content-footer">
@@ -133,10 +113,6 @@
 					<a class="social-links__anchor" href="https://www.instagram.com/uciblockchain">
 					<img class="social-links__image" data-follow src="./resources/images/socials/instagram.svg" alt="Instagram logo"
 						width="20" height="20">
-					</a>
-					<a class="social-links__anchor" href="https://discord.gg/KGD5Qx2nfU">
-					<img class="social-links__image" data-follow src="./resources/images/socials/discord.svg" alt="Discord logo"
-						id="social-discord" width="20" height="20">
 					</a>
 					<a class="social-links__anchor" href="https://github.com/blockchainuci/">
 					<img class="social-links__image" data-follow src="./resources/images/socials/github.svg" alt="Github logo" width="20"
@@ -165,10 +141,12 @@
 				</div>
 				<div class="content-section section--hidden" data-page="1">
 					<h1 class="content-section__title">AN ECOSYSTEM FOR BLOCKCHAIN EDUCATION</h1>
-					<p class="content-section__text">Blockchain at UCI is an ecosystem for blockchain education, development, and
-						networking at UC Irvine and surrounding areas. We organize workshops, educational seminars, hackathons, and
-						networking events to facilitate the growth of blockchain awareness, technical understanding, and thorough
-						training.
+					<p class="content-section__text">Blockchain at UCI is UC Irvine’s premier student organization for
+						blockchain education, Web3 development, and decentralized technology. We bring together students from
+						computer science, economics, and beyond to explore Ethereum, Solana, DeFi, smart contracts, and the broader
+						crypto ecosystem. Through workshops, hackathons, industry speaker events, and research seminars, we equip the
+						next generation of blockchain engineers and founders with the skills, network, and real-world experience to
+						lead in Web3.
 					</p>
 					<button class="content-section__button button button--icon" id="button_email_list">
 					<img class="button__image" src="./resources/images/icons/email.svg" alt="Email icon" />
@@ -182,7 +160,6 @@
 						technologies, and helping students in Orange County develop the necessary skills and knowledge to participate
 						in new, exciting opportunities surrounding blockchain. We hope to help introduce the next generation of
 						blockchain leaders.
-					</p>
 					</p>
 					<div class="content-services">
 						<div class="content-services__service">
@@ -287,118 +264,6 @@
 							<span class="content-section__image-text-title">Business Development Intern</span>
 						</div>
 					</div>
-					<h2 class="content-section__title content-section__title--sub">ALUMNI</h2>
-					<div class="content-section__images">
-						<div class="content-section__image-holder">
-							<img class="content-section__image" src="./resources/images/people/anish.jpg" id="stinky" alt="Team photo" />
-							<span class="content-section__image-text-name">Anish Lathker</span>
-							<span class="content-section__image-text-title">President</span>
-							<a class="social-links__anchor__content content-section__image-text-social"
-								href="https://www.linkedin.com/in/anish-lathker-%F0%9F%98%84-67632a181">
-							<img class="social-links__image__content social-links__image__content1" src="./resources/images/socials/linkedin.svg" alt="Linkedin logo"
-								width="20" height="20">
-							</a>
-							<a class="social-links__anchor__content content-section__image-text-social-twitter"
-								href="https://twitter.com/nullpenguin">
-							<img class="social-links__image__content social-links__image__content2" src="./resources/images/socials/twitter.svg" alt="Twitter logo"
-								width="20" height="20">
-							</a>
-							<a class="social-links__anchor__content content-section__image-text-social-instagram"
-								href="https://www.instagram.com/anishlat/">
-							<img class="social-links__image__content social-links__image__content3" src="./resources/images/socials/instagram.svg" alt="Instagram logo"
-								width="20" height="20">
-							</a>
-						</div>
-						<div class="content-section__image-holder">
-							<img class="content-section__image" src="./resources/images/people/toast.jpg" alt="Team photo" />
-							<span class="content-section__image-text-name">Daniel Lee</span>
-							<span class="content-section__image-text-title">Vice President</span>
-							<a class="social-links__anchor__content content-section__image-text-social"
-								href="https://www.linkedin.com/in/daniel-lee-b11920173/">
-							<img class="social-links__image__content social-links__image__content1" src="./resources/images/socials/linkedin.svg" alt="Linkedin logo"
-								width="20" height="20">
-							</a>
-							<a class="social-links__anchor__content content-section__image-text-social-twitter"
-								href="https://twitter.com/toastinspector">
-							<img class="social-links__image__content social-links__image__content2" src="./resources/images/socials/twitter.svg" alt="Twitter logo"
-								width="20" height="20">
-							</a>
-						</div>
-						<div class="content-section__image-holder">
-							<img class="content-section__image" src="./resources/images/people/kainoa.png" id="gay" alt="Team photo" />
-							<span class="content-section__image-text-name">Kainoa Kanter</span>
-							<span class="content-section__image-text-title">Dir. of<br>Technology</span>
-							<a class="social-links__anchor__content content-section__image-text-social" href="https://t1c.dev">
-							<img class="social-links__image__content social-links__image__content1" src="./resources/images/socials/linkedin.svg" alt="Linkedin logo"
-								width="20" height="20">
-							</a>
-							<a class="social-links__anchor__content content-section__image-text-social-twitter"
-								href="https://stop.voring.me/@thatonecalculator">
-							<img class="social-links__image__content social-links__image__content2" src="./resources/images/socials/misskey.svg" alt="Twitter logo"
-								width="20" height="20">
-							</a>
-						</div>
-						<div class="content-section__image-holder">
-							<img class="content-section__image" src="./resources/images/people/ethan.jpg" alt="Team photo" />
-							<span class="content-section__image-text-name">Ethan Gao</span>
-							<span class="content-section__image-text-title">Dir. of<br>I/E Affairs </span>
-							<a class="social-links__anchor__content content-section__image-text-social"
-								href="https://www.linkedin.com/in/ethan-gao-9644851ba/">
-							<img class="social-links__image__content social-links__image__content1" src="./resources/images/socials/linkedin.svg" alt="Linkedin logo"
-								width="20" height="20">
-							</a>
-							<a class="social-links__anchor__content content-section__image-text-social-twitter"
-								href="https://twitter.com/alphereth">
-							<img class="social-links__image__content social-links__image__content2" src="./resources/images/socials/twitter.svg" alt="Twitter logo"
-								width="20" height="20">
-							</a>
-						</div>
-						<div class="content-section__image-holder">
-							<img class="content-section__image" src="./resources/images/people/sebu.jpg" alt="Team photo" />
-							<span class="content-section__image-text-name">Sebu Eisaian</span>
-							<span class="content-section__image-text-title">Director of Project Management</span>
-							<a class="social-links__anchor__content content-section__image-text-social"
-								href="https://www.linkedin.com/in/sebueisaian">
-							<img class="social-links__image__content social-links__image__content1" src="./resources/images/socials/linkedin.svg" alt="Linkedin logo"
-								width="20" height="20">
-							</a>
-							<a class="social-links__anchor__content content-section__image-text-social-twitter"
-								href="https://twitter.com/SebuWeb3">
-							<img class="social-links__image__content social-links__image__content2" src="./resources/images/socials/twitter.svg" alt="Twitter logo"
-								width="20" height="20">
-							</a>
-						</div>
-						<div class="content-section__image-holder">
-							<img class="content-section__image" src="./resources/images/people/jacob.jpg" alt="Team photo" />
-							<span class="content-section__image-text-name">Jacob Mark</span>
-							<span class="content-section__image-text-title">Treasurer</span>
-							<a class="social-links__anchor__content content-section__image-text-social"
-								href="https://www.linkedin.com/in/jacob-mark-3890491b2/">
-							<img class="social-links__image__content social-links__image__content1" src="./resources/images/socials/linkedin.svg" alt="Linkedin logo"
-								width="20" height="20">
-							</a>
-							<a class="social-links__anchor__content content-section__image-text-social-twitter"
-								href="https://www.instagram.com/mxrkxlvi">
-							<img class="social-links__image__content social-links__image__content2" src="./resources/images/socials/instagram.svg" alt="Twitter logo"
-								width="20" height="20">
-							</a>
-						</div>
-						<div class="content-section__image-holder">
-							<img class="content-section__image" src="./resources/images/people/divam.jpg" alt="Team photo" />
-							<span class="content-section__image-text-name">Divam Kumar</span>
-							<span class="content-section__image-text-title">Technical Project Manager</span>
-							<a class="social-links__anchor__content content-section__image-text-social"
-								href="https://www.linkedin.com/in/divam-k/">
-							<img class="social-links__image__content social-links__image__content1" src="./resources/images/socials/linkedin.svg" alt="Linkedin logo"
-								width="20" height="20">
-							</a>
-							<a class="social-links__anchor__content content-section__image-text-social-twitter"
-								href="https://twitter.com/divam_k">
-							<img class="social-links__image__content social-links__image__content2" src="./resources/images/socials/twitter.svg" alt="Twitter logo"
-								width="20" height="20">
-							</a>
-						</div>
-					</div>
 				</div>
 			</div>
 			<div class="content-section section--hidden advisor-section" data-page="4">
@@ -456,33 +321,83 @@
 				<h1 class="content-section__title">SPONSORS</h1>
 				<div class="sponsor-logos flex flex--center">
 					<div class="sponsor-logos__logo">
-						<a href="https://goexpoverse.com/" target="_blank">
-							<img data-follow src="./resources/images/sponsors/expoverse.svg" alt="Expoverse logo" width="70">
+						<a href="https://chain.link" target="_blank">
+							<img data-follow src="./resources/images/sponsors/chainlink.png" alt="Chainlink logo" width="130" height="33" loading="lazy">
 						</a>
 					</div>
 					<div class="sponsor-logos__logo">
-						<a href="https://radiocaca.com" target="_blank">
-							<img data-follow src="./resources/images/sponsors/raca.svg" alt="Radio Caca logo" width="70">
+						<a href="https://www.circle.com" target="_blank">
+							<img data-follow src="./resources/images/sponsors/circle.png" alt="Circle logo" width="130" height="33" loading="lazy">
+						</a>
+					</div>
+					<div class="sponsor-logos__logo">
+						<a href="https://solana.com" target="_blank">
+							<img data-follow src="./resources/images/sponsors/solana.png" alt="Solana logo" width="130" height="130" loading="lazy">
+						</a>
+					</div>
+					<div class="sponsor-logos__logo">
+						<a href="https://www.standwithcrypto.org" target="_blank">
+							<img data-follow src="./resources/images/sponsors/stand-with-crypto.png" alt="Stand With Crypto logo" width="130" height="69" loading="lazy">
+						</a>
+					</div>
+					<div class="sponsor-logos__logo">
+						<a href="https://sui.io" target="_blank">
+							<img data-follow src="./resources/images/sponsors/sui.png" alt="Sui logo" width="130" height="67" loading="lazy">
 						</a>
 					</div>
 					<div class="sponsor-logos__logo">
 						<a href="https://tron.network/" target="_blank">
-							<img data-follow src="./resources/images/sponsors/tron.svg" alt="Tron logo" width="70">
+							<img data-follow src="./resources/images/sponsors/tron.png" alt="Tron logo" width="130" height="44" loading="lazy">
 						</a>
 					</div>
 					<div class="sponsor-logos__logo">
-						<a href="https://www.votingdao.io/" target="_blank">
-							<img data-follow src="./resources/images/sponsors/votingdao.svg" alt="VotingDao logo" width="70">
+						<a href="https://polymarket.com" target="_blank">
+							<img data-follow src="./resources/images/sponsors/polymarket.png" alt="Polymarket logo" width="130" height="62" loading="lazy">
 						</a>
 					</div>
 				</div>
 			</div>
-			<div class="content-section section--hidden" data-page="7">
+						<div class="content-section section--hidden" data-page="7">
+				<h1 class="content-section__title">WHERE WE'VE WORKED</h1>
+				<p class="content-section__text">Our members have gone on to intern and work at leading companies across blockchain, finance, and tech.</p>
+				<div class="sponsor-logos sponsor-logos--wrap flex flex--center">
+					<div class="sponsor-logos__logo">
+						<img src="./resources/images/work/amazon.png" alt="Amazon" width="130" height="47" loading="lazy">
+					</div>
+					<div class="sponsor-logos__logo">
+						<img src="./resources/images/work/apple.svg.png" alt="Apple" width="55" height="65" loading="lazy">
+					</div>
+					<div class="sponsor-logos__logo">
+						<img src="./resources/images/work/blackrock.png" alt="Blackstone" width="170" height="25" loading="lazy">
+					</div>
+					<div class="sponsor-logos__logo">
+						<img src="./resources/images/work/capital-one.jpg" alt="Capital One" width="130" height="73" loading="lazy">
+					</div>
+					<div class="sponsor-logos__logo">
+						<img src="./resources/images/work/coinbase.png" alt="Coinbase" width="130" height="23" loading="lazy">
+					</div>
+					<div class="sponsor-logos__logo">
+						<img src="./resources/images/work/deloitte.png" alt="Deloitte" width="130" height="73" loading="lazy">
+					</div>
+					<div class="sponsor-logos__logo">
+						<img src="./resources/images/work/disney.png" alt="Disney" width="130" height="55" loading="lazy">
+					</div>
+					<div class="sponsor-logos__logo">
+						<img src="./resources/images/work/ripple.png" alt="Ripple" width="130" height="33" loading="lazy">
+					</div>
+					<div class="sponsor-logos__logo">
+						<img src="./resources/images/work/tesla.png" alt="Tesla" width="80" height="80" loading="lazy">
+					</div>
+					<div class="sponsor-logos__logo">
+						<img src="./resources/images/work/tiktok.png" alt="TikTok" width="100" height="67" loading="lazy">
+					</div>
+				</div>
+			</div>
+			<div class="content-section section--hidden" data-page="8">
 				<h1 class="content-section__title">CONTACT US</h1>
 				<p class="content-section__text">We’re here to help and answer any question you might have. We look forward to
 					hearing from you. You can also find us on social media below.
 				</p>
-				<!-- <div class="content-section__buttons-holder"> -->
 				<a class="content-section__button button button--icon contact__button" href="mailto:blockchainatuci@gmail.com">
 				<img class="button__image" src="./resources/images/icons/email.svg" alt="Email icon" />
 				<span class="button__text">EMAIL US</span>
@@ -493,18 +408,10 @@
 				<img class="button__image" src="./resources/images/socials/linkedin.svg" alt="Linkedin icon" />
 				<span class="button__text">LINKEDIN</span>
 				</a>
-				<a class="content-section__button button button--icon contact__button" href="https://discord.gg/KGD5Qx2nfU">
-				<img class="button__image" src="./resources/images/socials/discord.svg" alt="Linkedin icon" />
-				<span class="button__text">DISCORD</span>
-				</a>
-				<!-- </div> -->
-			</div>
+
 			</div>
 		</main>
-		<audio id="sfx" src="resources/vineboom.wav" style="display: none" preload="auto"></audio>
-		<audio id="sfx2" src="resources/clown.wav" style="display: none" preload="auto"></audio>
 		<script type="module" src="./main.js"></script>
-		<script type="module" src="./sussy.js"></script>
 	</body>
 </html>
 
