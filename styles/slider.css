@@ -38,11 +38,11 @@
   color: var(--secondaryColor);
 }
 .slider__item-name {
-  font: 500 25px Roboto, sans-serif;
+  font: 400 25px Inter, "Helvetica Neue", Arial, sans-serif;
   margin: 0;
 }
 .slider__item-position {
-  font: 900 20px Roboto, sans-serif;
+  font: 700 20px Inter, "Helvetica Neue", Arial, sans-serif;
   margin: 0;
   letter-spacing: 3px;
   color: var(--primaryColor);
@@ -74,7 +74,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  font: 900 15px Roboto, sans-serif;
+  font: 700 15px Inter, "Helvetica Neue", Arial, sans-serif;
   opacity: 0;
   margin-left: -50px;
   transition: 300ms ease;

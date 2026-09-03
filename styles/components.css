@@ -7,7 +7,7 @@
   border: none;
   background-color: transparent;
   letter-spacing: 2px;
-  font: 700 Roboto, sans-serif;
+  font: 500 15px Inter, "Helvetica Neue", Arial, sans-serif;
   border-radius: var(--radius);
   cursor: pointer;
   overflow: hidden;
@@ -23,7 +23,7 @@
     background-color: transparent;
     padding: 15px 30px;
     letter-spacing: var(--letterSpacing);
-    font: 700 var(--primaryTextSize) Roboto, sans-serif;
+    font: 500 var(--primaryTextSize) Inter, "Helvetica Neue", Arial, sans-serif;
     border-radius: var(--radius);
     cursor: pointer;
     overflow: hidden;
@@ -183,7 +183,7 @@
 @media only screen and (max-width: 769px) {
   .button {
     padding: 10px 25px;
-    font: 700 var(--primaryTextSizeS) Roboto, sans-serif;
+    font: 500 var(--primaryTextSizeS) Inter, "Helvetica Neue", Arial, sans-serif;
   }
 
   .button--secondary::before {

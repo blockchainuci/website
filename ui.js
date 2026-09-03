@@ -32,6 +32,19 @@ export default class UI {
       element.addEventListener('click', event.cb)
     })
 
+    // Menu items and paging dots are role="button" tabindex="0", so Enter/Space
+    // must activate them the same way a click does.
+    const activateOnKey = cb => e => {
+      if (e.key !== 'Enter' && e.key !== ' ' && e.key !== 'Spacebar') return
+      if (!e.target.dataset || e.target.dataset.page === undefined) return
+      e.preventDefault()
+      cb(e)
+    }
+    uiWrapper.querySelector('.menu-list')
+      .addEventListener('keydown', activateOnKey(this.onMenuPagingClick.bind(this)))
+    uiWrapper.querySelector('.fixed-content-paging')
+      .addEventListener('keydown', activateOnKey(this.onPagingClick.bind(this)))
+
     const footerYear = uiWrapper.querySelector('.footer-copy__date')
     footerYear.innerHTML = `© ${new Date().getFullYear()}`
   }

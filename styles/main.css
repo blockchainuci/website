@@ -1,41 +1,17 @@
-@font-face {
-  font-family: Roboto;
-  font-weight: 400;
-  src: url(../resources/fonts/Roboto-Thin.ttf);
-}
-@font-face {
-  font-family: Roboto;
-  font-weight: 500;
-  src: url(../resources/fonts/Roboto-Light.ttf);
-}
-@font-face {
-  font-family: Roboto;
-  font-weight: 600;
-  src: url(../resources/fonts/Roboto-Regular.ttf);
-}
-@font-face {
-  font-family: Roboto;
-  font-weight: 700;
-  src: url(../resources/fonts/Roboto-Medium.ttf);
-}
-@font-face {
-  font-family: Roboto;
-  font-weight: 800;
-  src: url(../resources/fonts/Roboto-Bold.ttf);
-}
-@font-face {
-  font-family: Roboto;
-  font-weight: 900;
-  src: url(../resources/fonts/Roboto-Black.ttf);
-}
-
 :root {
-  --primaryColor: #4c9fc8;
-  --primaryBoldColor: #ebbc4e;
-  --primaryBlackColor: #ebbc4e;
-  --secondaryColor: #ffffff;
-  --opaqueBackground: #000000e6;
-  --mainCanvasBackground: #141414;
+  /* UCI brand, saturated. The old palette used #4c9fc8 / #ebbc4e — desaturated
+     versions of UCI blue and gold — which is what made the site read as flat. */
+  --primaryColor: #1b98e0;      /* vibrant blue: lines, links, dots, accents */
+  --primaryDeepColor: #0064a4;  /* UCI blue, deep: fills and hovers */
+  --primaryBoldColor: #ffd200;  /* UCI gold, full strength */
+  --primaryBlackColor: #ffd200; /* team photo rings (kept gold, now vivid) */
+  --secondaryColor: #f2f5f8;    /* cool white, sits better on a blue-dark ground */
+  --opaqueBackground: #060a12e6;
+  --mainCanvasBackground: #0a0f18; /* blue-biased dark, not neutral grey */
+  --glowColor: #1b98e066;
+  --wallLine: #1e2a3d;
+  --wallCellHover: #101827;
+  --shadowColor: #04070ce6;
   --primaryTextSize: 15px;
   --primaryTextSizeS: 10px;
   --letterSpacing: 5px;
@@ -59,7 +35,7 @@ ul {
 
 li {
   color: var(--secondaryColor);
-  font: 600 15px Roboto, sans-serif;
+  font: 400 15px Inter, "Helvetica Neue", Arial, sans-serif;
   text-align: left;
 }
 li::before {
@@ -138,7 +114,7 @@ canvas {
 }
 
 .loader__text {
-  font: 900 10vw Roboto, sans-serif;
+  font: 700 10vw Inter, "Helvetica Neue", Arial, sans-serif;
   position: relative;
   letter-spacing: 15px;
   color: var(--primaryColor);
@@ -194,7 +170,7 @@ canvas {
 .menu-list__item {
   color: var(--secondaryColor);
   position: relative;
-  font: 400 4vh Roboto, sans-serif !important;
+  font: 500 4vh "Space Grotesk", "Helvetica Neue", Arial, sans-serif !important;
   letter-spacing: var(--letterSpacing);
   cursor: pointer;
   padding-left: 30px;
@@ -208,7 +184,7 @@ canvas {
 .menu-list__item {
   color: var(--secondaryColor);
   position: relative;
-  font: 900 8vh Roboto, sans-serif !important;
+  font: 700 8vh "Space Grotesk", "Helvetica Neue", Arial, sans-serif !important;
   letter-spacing: var(--letterSpacing);
   cursor: pointer;
   padding-left: 30px;
@@ -279,8 +255,8 @@ canvas {
   width: 70%;
   height: 70%;
   padding: 50px 100px;
-  background: #00000070;
-  filter: drop-shadow(2px 4px 100px #1b1b1be6);
+  background: #060a1280;
+  filter: drop-shadow(2px 4px 100px var(--shadowColor));
   overflow: hidden;
   overflow-y: auto;
 }
@@ -289,7 +265,7 @@ canvas {
   opacity: 0;
   transform: translateY(50px);
   color: var(--secondaryColor);
-  font: 800 40px Roboto, sans-serif;
+  font: 600 40px Inter, "Helvetica Neue", Arial, sans-serif;
   margin-bottom: 0;
 }
 
@@ -298,7 +274,7 @@ canvas {
   margin: 0;
   letter-spacing: 1px;
   opacity: 0;
-  font: 500 18px Roboto, sans-serif;
+  font: 400 18px Inter, "Helvetica Neue", Arial, sans-serif;
   margin-bottom: 30px;
 }
 
@@ -330,7 +306,7 @@ canvas {
 
 .popup__offer-title {
   color: var(--secondaryColor);
-  font: 500 30px Roboto, sans-serif;
+  font: 400 30px Inter, "Helvetica Neue", Arial, sans-serif;
 }
 
 .popup--animated .popup__offers {
@@ -348,7 +324,7 @@ canvas {
 }
 
 iframe {
-  filter: drop-shadow(2px 4px 100px #1b1b1be6);
+  filter: drop-shadow(2px 4px 100px var(--shadowColor));
   border: none;
 }
 
@@ -440,7 +416,7 @@ iframe {
 
 .fixed-content-header__logo {
   color: var(--secondaryColor);
-  font: 900 35px Roboto, sans-serif;
+  font: 700 35px Inter, "Helvetica Neue", Arial, sans-serif;
   letter-spacing: 20px;
   user-select: none;
   margin-left: 30px;
@@ -542,7 +518,7 @@ iframe {
 }
 
 .configuration__letters-text {
-  font: 900 11vw Roboto, sans-serif;
+  font: 700 11vw Inter, "Helvetica Neue", Arial, sans-serif;
   position: relative;
   letter-spacing: 20px;
   color: var(--primaryColor);
@@ -552,9 +528,9 @@ iframe {
     1px 4px 1px var(--primaryBoldColor), 1px 5px 1px var(--primaryBoldColor),
     1px 6px 1px var(--primaryBoldColor), 1px 7px 1px var(--primaryBoldColor),
     1px 8px 1px var(--primaryBoldColor), 1px 9px 1px var(--primaryBoldColor),
-    1px 10px 1px var(--primaryBoldColor), 1px 18px 6px rgba(16, 16, 16, 0.4),
-    1px 22px 10px rgba(16, 16, 16, 0.2), 1px 25px 35px rgba(16, 16, 16, 0.2),
-    1px 30px 60px rgba(16, 16, 16, 0.4);
+    1px 10px 1px var(--primaryBoldColor), 1px 18px 6px rgba(4, 7, 12, 0.5),
+    1px 22px 10px rgba(4, 7, 12, 0.3), 1px 25px 35px rgba(4, 7, 12, 0.3),
+    1px 30px 60px rgba(4, 7, 12, 0.5);
 }
 
 .fall-recruitment {
@@ -610,7 +586,7 @@ iframe {
   display: inline-block;
   margin-right: 10px;
   color: var(--secondaryColor);
-  font: 600 var(--primaryTextSize) Roboto, sans-serif;
+  font: 400 var(--primaryTextSize) Inter, "Helvetica Neue", Arial, sans-serif;
   animation: scrollLetterDrops 4s linear forwards infinite;
 }
 .scroll-letters__letter::after {
@@ -653,7 +629,7 @@ iframe {
 
 .fixed-content-footer__copy {
   color: var(--secondaryColor);
-  font: 600 var(--primaryTextSize) Roboto, sans-serif;
+  font: 400 var(--primaryTextSize) Inter, "Helvetica Neue", Arial, sans-serif;
 }
 
 /***** MAIN CONTENT SECTIONS *****/
@@ -694,6 +670,7 @@ iframe {
 .content-section.section--hidden .content-section__text,
 .content-section.section--hidden .content-section__button,
 .content-section.section--hidden .content-section__image-holder,
+.content-section.section--hidden .advisor-card,
 .content-section.section--hidden .content-section__buttons-holder,
 .content-section.section--hidden .content-services__service {
   opacity: 0;
@@ -704,6 +681,7 @@ iframe {
 .content-section.section--hidden-reverse .content-section__text,
 .content-section.section--hidden-reverse .content-section__button,
 .content-section.section--hidden-reverse .content-section__image-holder,
+.content-section.section--hidden-reverse .advisor-card,
 .content-section__image-text-name .content-section__image-text-description,
 .content-section.section--hidden-reverse .content-section__buttons-holder,
 .content-section.section--hidden-reverse .content-services__service {
@@ -738,7 +716,7 @@ iframe {
 .content-section__title {
   position: relative;
   color: var(--secondaryColor);
-  font: 800 40px Roboto, sans-serif;
+  font: 600 40px Inter, "Helvetica Neue", Arial, sans-serif;
   transform: translate3d(0, 0, 0);
   transition: var(--contentTransitionDuration) 300ms
     var(--contentTransitionBezier);
@@ -750,74 +728,10 @@ iframe {
 }
 
 /* Grid layout for large teams */
-.content-section__images--grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 24px 20px;
-  width: 90%;
-}
-
-/* Turn each card into a column flex container */
-.content-section__images--grid .content-section__image-holder {
-  position: relative !important;
-  left: auto !important;
-  transform: none !important;
-  width: 120px !important;
-  height: auto !important;
-  flex: 0 0 120px !important;
-  display: flex !important;
-  flex-direction: column;
-  align-items: center;
-  border: none !important;
-  box-shadow: none !important;
-  border-radius: 0 !important;
-  overflow: visible !important;
-  margin-bottom: 0;
-  transition: opacity 400ms 100ms var(--contentTransitionBezier) !important;
-}
-
-.content-section.section--hidden .content-section__images--grid .content-section__image-holder {
-  opacity: 0;
-}
-
-/* Move circle styling to the image itself */
-.content-section__images--grid .content-section__image {
-  width: 100px !important;
-  height: 100px !important;
-  border-radius: 50% !important;
-  border: 3px solid var(--primaryBlackColor) !important;
-  box-shadow: 0 0 20px 5px rgba(0, 0, 0, 1) !important;
-  flex-shrink: 0;
-}
-
-/* Text flows naturally below the image */
-.content-section__images--grid .content-section__image-text-name {
-  position: static !important;
-  transform: none !important;
-  width: 100% !important;
-  height: auto !important;
-  text-align: center;
-  margin-top: 10px;
-  white-space: normal;
-  justify-content: flex-start;
-}
-
-.content-section__images--grid .content-section__image-text-title {
-  position: static !important;
-  transform: none !important;
-  width: 100% !important;
-  height: auto !important;
-  text-align: center;
-  margin-top: 2px;
-  white-space: normal;
-  justify-content: flex-start;
-}
-
 .content-section__text {
   width: 70%;
   color: var(--secondaryColor);
-  font: 600 20px Roboto, sans-serif;
+  font: 400 20px Inter, "Helvetica Neue", Arial, sans-serif;
   margin-bottom: 50px;
   transform: translate3d(0, 0, 0);
   transition: var(--contentTransitionDuration) 500ms
@@ -942,7 +856,7 @@ margin-top: -50px; /* Fix mobile spacing */
 
 .content-service__text {
   color: var(--secondaryColor);
-  font: 800 20px Roboto, sans-serif;
+  font: 600 20px Inter, "Helvetica Neue", Arial, sans-serif;
   margin-top: 20px;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -975,7 +889,7 @@ margin-top: -50px; /* Fix mobile spacing */
   flex-basis: 50%;
   position: absolute;
   border: 3px solid var(--primaryBlackColor);
-  box-shadow: 0 0 20px 5px rgba(0, 0, 0, 1);
+  box-shadow: 0 0 22px 6px rgba(4, 7, 12, 0.95);
 }
 
 .content-section__image-text-name {
@@ -988,7 +902,7 @@ margin-top: -50px; /* Fix mobile spacing */
   flex-direction: column;
   justify-content: center;
   color: var(--secondaryColor);
-  font: 450 13px Roboto, sans-serif;
+  font: 400 13px Inter, "Helvetica Neue", Arial, sans-serif;
   letter-spacing: 1px;
   transition: 200ms var(--contentTransitionBezier);
 }
@@ -1003,7 +917,7 @@ margin-top: -50px; /* Fix mobile spacing */
   flex-direction: column;
   justify-content: center;
   color: var(--secondaryColor);
-  font: 300 10px Roboto, sans-serif;
+  font: 400 10px Inter, "Helvetica Neue", Arial, sans-serif;
   letter-spacing: 1px;
   transition: 200ms var(--contentTransitionBezier);
 }
@@ -1030,7 +944,7 @@ margin-top: -50px; /* Fix mobile spacing */
   flex-basis: 50%;
   position: absolute;
   border: 3px solid var(--primaryBlackColor);
-  box-shadow: 0 0 20px 5px rgba(0, 0, 0, 1);
+  box-shadow: 0 0 22px 6px rgba(4, 7, 12, 0.95);
 }
 
 .content-section__image-text-name {
@@ -1043,7 +957,7 @@ margin-top: -50px; /* Fix mobile spacing */
   flex-direction: column;
   justify-content: center;
   color: var(--secondaryColor);
-  font: 900 25px Roboto, sans-serif;
+  font: 700 25px Inter, "Helvetica Neue", Arial, sans-serif;
   letter-spacing: 1px;
   transition: 200ms var(--contentTransitionBezier);
 }
@@ -1058,7 +972,7 @@ margin-top: -50px; /* Fix mobile spacing */
   flex-direction: column;
   justify-content: center;
   color: var(--secondaryColor);
-  font: 600 16px Roboto, sans-serif;
+  font: 400 16px Inter, "Helvetica Neue", Arial, sans-serif;
   letter-spacing: 1px;
   transition: 200ms var(--contentTransitionBezier);
 }
@@ -1113,162 +1027,11 @@ margin-top: -50px; /* Fix mobile spacing */
 
 /* Styles for screens 601px and bigger */
 @media only screen and (min-width: 601px) {
-.content-section__image-text-name--bill {
-  position: absolute;
-  bottom: 0px;
-  left: 100px;
-  width: 200%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: left;
-  align-items: center;
-  color: var(--secondaryColor);
-  font: 900 30px Roboto, sans-serif;
-  letter-spacing: 1px;
-  transition: 200ms var(--contentTransitionBezier);
-}
-
-.content-section__image-text-title--bill {
-  position: absolute;
-  bottom: -40px;
-  left: 100px;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: left;
-  align-items: center;
-  color: var(--secondaryColor);
-  font: 800 20px Roboto, sans-serif;
-  letter-spacing: 1px;
-  transition: 200ms var(--contentTransitionBezier);
-}
-
-.content-section__image-text-description--bill {
-  position: absolute;
-  bottom: -70px;
-  left: 105px;
-  width: 400%;
-  height: 100%;
-  display: flex;
-  justify-content: left;
-  align-items: left;
-  color: var(--secondaryColor);
-  font: 800 14px Roboto, sans-serif;
-  letter-spacing: 1px;
-  transition: 200ms var(--contentTransitionBezier);
-}
-
-.content-section__image-text-body--bill {
-  position: absolute;
-  bottom: 0px;
-  left: 420px;
-  width: 600%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: right;
-  align-items: right;
-  text-align: right;
-  color: var(--secondaryColor);
-  font: 600 14px Roboto, sans-serif;
-  letter-spacing: 1px;
-  transition: 200ms var(--contentTransitionBezier);
-}
-
-.content-section__image-text-social--bill {
-  position: absolute;
-  bottom: 45%;
-  left: 330%;
-}
-.content-section__image-text-name--bill {
-  transform: translate(-8%, 15%);
-  font-size: 25px;
-}
 
 }
 
 /* Styles for screens 600px and smaller */
 @media only screen and (max-width: 600px) {
-  .content-section__image-text-name--bill {
-    position: absolute;
-    bottom: 0px;
-    left: 100px;
-    width: 200%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: left;
-    align-items: center;
-    color: var(--secondaryColor);
-    font: 450 15px Roboto, sans-serif;
-    letter-spacing: 1px;
-    transition: 200ms var(--contentTransitionBezier);
-  }
-  
-  .content-section__image-text-title--bill {
-    position: absolute;
-    bottom: -40px;
-    left: 100px;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: left;
-    align-items: center;
-    color: var(--secondaryColor);
-    font: 400 11px Roboto, sans-serif;
-    letter-spacing: 1px;
-    transition: 200ms var(--contentTransitionBezier);
-  }
-  
-  .content-section__image-text-description--bill {
-    position: absolute;
-    bottom: -70px;
-    left: 105px;
-    width: 400%;
-    height: 100%;
-    display: flex;
-    justify-content: left;
-    align-items: left;
-    color: var(--secondaryColor);
-    font: 800 11px Roboto, sans-serif;
-    letter-spacing: 1px;
-    transition: 200ms var(--contentTransitionBezier);
-  }
-  
-  .content-section__image-text-body--bill {
-    position: absolute;
-    bottom: 0px;
-    left: 420px;
-    width: 600%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: right;
-    align-items: right;
-    text-align: right;
-    color: var(--secondaryColor);
-    font: 600 14px Roboto, sans-serif;
-    letter-spacing: 1px;
-    transition: 200ms var(--contentTransitionBezier);
-  }
-  
-  .content-section__image-text-social--bill {
-    position: absolute;
-    bottom: 15%;
-    left: 460%;
-  }
-
-  .content-section__image-text-name--bill {
-    transform: translate(-50%, 0%);
-    font-size: 16px;
-  }
-  .content-section__image-text-title--bill {
-    transform: translate(-50%, -30%);
-    font-size: 13px;
-  }
   .advisor-section {
     margin-top: 100px
   }
@@ -1369,7 +1132,7 @@ margin-top: -50px; /* Fix mobile spacing */
 }
 
 .content-portfolio__name {
-  font: 600 20px Roboto, sans-serif;
+  font: 400 20px Inter, "Helvetica Neue", Arial, sans-serif;
   position: absolute;
   bottom: 0;
   left: 25px;
@@ -1398,7 +1161,7 @@ margin-top: -50px; /* Fix mobile spacing */
 
 @media only screen and (max-width: 800px) {
   .menu-list__item {
-    font: 900 9vw Roboto, sans-serif;
+    font: 700 9vw Inter, "Helvetica Neue", Arial, sans-serif;
   }
   .content-section__image-holder:nth-of-type(1) {
     transform: translate(-140%, -50px);
@@ -1458,10 +1221,6 @@ margin-top: -50px; /* Fix mobile spacing */
     align-items: left;
     text-align: left;
     justify-content: left;
-  }
-  .content-section__image-text-description--bill,
-  .content-section__image-text-body--bill {
-    display: none;
   }
 
   .popup {
@@ -1598,4 +1357,511 @@ margin-top: -50px; /* Fix mobile spacing */
   .content-section__text-team {
     margin-bottom: 17px;
   }
+}
+
+/* ==========================================================================
+   Accessibility layer
+   ========================================================================== */
+
+/* Keyboard focus. Nav is driven by role="button" elements, so without this
+   there is no visible indication of where keyboard focus is. Uses
+   :focus-visible so mouse users never see a ring. */
+.menu-list__item:focus-visible,
+.paging__page:focus-visible,
+.button:focus-visible,
+a:focus-visible,
+[tabindex="0"]:focus-visible {
+  outline: 3px solid var(--primaryColor);
+  outline-offset: 3px;
+  border-radius: var(--radius);
+}
+
+/* The paging dots are tiny; give the ring room so it stays legible. */
+.paging__page:focus-visible {
+  outline-offset: 6px;
+}
+
+/* Skip link so keyboard users can bypass the menu. */
+.skip-link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  padding: 12px 20px;
+  background: var(--primaryColor);
+  color: #000;
+  font: 500 14px Inter, "Helvetica Neue", Arial, sans-serif;
+  letter-spacing: 1px;
+  transform: translateY(-120%);
+  transition: transform 150ms ease;
+}
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+/* Respect a reduced-motion preference. This site animates heavily: section
+   transitions, translate3d reveals, the loader and the rotating portfolio
+   images. Collapse the durations rather than disabling them, so the
+   class-driven show/hide still lands on the correct end state. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 1ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  /* Drop the slide-in offsets so content is never mid-flight. */
+  .content-section.section--hidden .content-section__title,
+  .content-section.section--hidden .content-section__text,
+  .content-section.section--hidden .content-section__button,
+  .content-section.section--hidden .content-section__image-holder,
+  .content-section.section--hidden .advisor-card,
+  .content-section.section--hidden .content-section__buttons-holder,
+  .content-section.section--hidden .content-services__service,
+  .content-section.section--hidden-reverse .content-section__title,
+  .content-section.section--hidden-reverse .content-section__text,
+  .content-section.section--hidden-reverse .content-section__button,
+  .content-section.section--hidden-reverse .content-section__image-holder,
+  .content-section.section--hidden-reverse .advisor-card,
+  .content-section.section--hidden-reverse .content-section__buttons-holder,
+  .content-section.section--hidden-reverse .content-services__service {
+    transform: none;
+  }
+
+  /* The portfolio images rotate 90deg on reveal; that is a lot of motion. */
+  .content-section.section--hidden .content-portfolio__image-holder,
+  .content-section.section--hidden-reverse .content-portfolio__image-holder,
+  .content-section.section--hidden .content-portfolio__image,
+  .content-section.section--hidden-reverse .content-portfolio__image {
+    transform: none;
+  }
+}
+
+/* ==========================================================================
+   Logo walls — sponsors and alumni employers
+   Marks are painted with CSS masks, not <img>: the Simple Icons sources are
+   monochrome, so `filter: none` on hover would render them black and invisible.
+   A mask lets each mark take any colour — white at rest, the brand's own colour
+   on hover, with the company name fading in beneath.
+   Every SVG viewBox was tightened to its true ink bounds first; Simple Icons
+   letterboxes wordmarks inside a square 24x24 box, which is why Coinbase and
+   Visa rendered tiny. `mask-size: contain` now scales real artwork, not padding.
+   mask-image itself is set inline per cell, because a url() routed through a
+   custom property resolves against THIS stylesheet's base, not the document.
+   ========================================================================== */
+.logo-wall {
+  display: grid;
+  width: min(1120px, 94%);
+  margin: 0 auto;
+  border-top: 1px solid var(--wallLine);
+  border-left: 1px solid var(--wallLine);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+/* Alumni employers: many marks, read as a dense wall. */
+.logo-wall--work { grid-template-columns: repeat(auto-fit, minmax(186px, 1fr)); }
+
+/* Partners: fewer, and they carry more weight — larger cells, fewer columns,
+   and the name shown at rest rather than only on hover. */
+.logo-wall--sponsors {
+  grid-template-columns: repeat(auto-fit, minmax(252px, 1fr));
+  width: min(1040px, 94%);
+}
+
+.logo-wall__cell {
+  border-right: 1px solid var(--wallLine);
+  border-bottom: 1px solid var(--wallLine);
+  transition: background 200ms var(--contentTransitionBezier);
+}
+.logo-wall__cell:hover { background: var(--wallCellHover); }
+
+.logo-wall__cell,
+.logo-wall__cell > a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  padding: 30px 22px 24px;
+  min-height: 152px;
+}
+.logo-wall__cell > a { padding: 0; min-height: 0; width: 100%; height: 100%; }
+
+.logo-wall--sponsors .logo-wall__cell,
+.logo-wall--sponsors .logo-wall__cell > a { min-height: 182px; padding: 34px 26px 28px; }
+.logo-wall--sponsors .logo-wall__cell > a { padding: 0; min-height: 0; }
+
+.logo-wall__mark {
+  display: block;
+  /* Size is per-logo (--mw/--mh, set inline): each mark is scaled to the same
+     optical AREA from its own aspect ratio, so a square glyph like Tesla and a
+     7:1 wordmark like BlackRock carry equal weight. A single shared box made
+     wordmarks win on width and left glyphs looking small. */
+  width: calc(var(--mw, 120) * 1px);
+  height: calc(var(--mh, 44) * 1px);
+  max-width: 100%;
+  background-color: var(--secondaryColor);
+  opacity: 0.62;
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+          mask-position: center;
+  -webkit-mask-size: contain;
+          mask-size: contain;
+  transition: background-color 200ms var(--contentTransitionBezier),
+              opacity 200ms var(--contentTransitionBezier);
+}
+
+.logo-wall__cell:hover .logo-wall__mark,
+.logo-wall__cell > a:focus-visible .logo-wall__mark {
+  background-color: var(--brand, var(--primaryColor));
+  opacity: 1;
+}
+
+/* Name sits in the DOM for screen readers; revealed on hover. Its box is
+   reserved at rest so nothing shifts when it appears. */
+.logo-wall__name {
+  display: block;
+  height: 14px;
+  line-height: 14px;
+  color: var(--secondaryColor);
+  font: 500 11.5px Inter, "Helvetica Neue", Arial, sans-serif;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  opacity: 0;
+  transform: translateY(3px);
+  transition: opacity 200ms var(--contentTransitionBezier),
+              transform 200ms var(--contentTransitionBezier);
+}
+.logo-wall__cell:hover .logo-wall__name,
+.logo-wall__cell > a:focus-visible .logo-wall__name {
+  opacity: 0.88;
+  transform: translateY(0);
+}
+/* Partner names are always legible — they are the point of the section. */
+.logo-wall--sponsors .logo-wall__name { opacity: 0.5; transform: none; }
+.logo-wall--sponsors .logo-wall__cell:hover .logo-wall__name { opacity: 0.95; }
+
+@media only screen and (max-width: 900px) {
+  .logo-wall--work { grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); }
+  .logo-wall--sponsors { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
+}
+
+@media only screen and (max-width: 600px) {
+  .logo-wall { width: 96%; }
+  .logo-wall--work { grid-template-columns: repeat(auto-fit, minmax(116px, 1fr)); }
+  .logo-wall--sponsors { grid-template-columns: repeat(auto-fit, minmax(142px, 1fr)); }
+  .logo-wall__cell,
+  .logo-wall__cell > a { padding: 20px 12px 16px; min-height: 104px; gap: 9px; }
+  .logo-wall__cell > a { padding: 0; min-height: 0; }
+  .logo-wall--sponsors .logo-wall__cell,
+  .logo-wall--sponsors .logo-wall__cell > a { min-height: 116px; padding: 22px 14px 18px; }
+  .logo-wall--sponsors .logo-wall__cell > a { padding: 0; min-height: 0; }
+  .logo-wall__mark { width: calc(var(--mw, 120) * 0.62px); height: calc(var(--mh, 44) * 0.62px); }
+  .logo-wall__name { font-size: 9.5px; letter-spacing: 0.06em; }
+}
+
+/* Touch devices have no hover: show colour and name at rest instead. */
+@media (hover: none) {
+  .logo-wall__mark { opacity: 0.92; background-color: var(--brand, var(--secondaryColor)); }
+  .logo-wall__name { opacity: 0.75; transform: none; }
+}
+
+/* ==========================================================================
+   Advisor card
+   This section holds a single person, so it gets the room to be the page.
+   Replaces the old absolutely-positioned block that used 200%/400%/600%
+   widths and broke at most viewport sizes.
+   ========================================================================== */
+.advisor-card {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: clamp(24px, 4vw, 48px);
+  align-items: start;
+  width: min(1000px, 92%);
+  margin: 0 auto;
+  padding: clamp(24px, 3.4vw, 44px);
+  background: rgba(16, 24, 39, 0.55);
+  border: 1px solid var(--wallLine);
+  border-left: 4px solid var(--primaryBoldColor);
+  border-radius: 8px;
+  text-align: left;
+}
+
+.advisor-card__photo {
+  width: clamp(150px, 17vw, 240px);
+  aspect-ratio: 4 / 5;
+  height: auto;
+  object-fit: cover;
+  border-radius: 6px;
+  border: 1px solid var(--wallLine);
+  box-shadow: 0 18px 46px rgba(4, 7, 12, 0.6);
+}
+
+.advisor-card__body { display: flex; flex-direction: column; }
+
+.advisor-card__name {
+  margin: 0;
+  color: var(--secondaryColor);
+  font: 700 clamp(28px, 3.4vw, 42px) Inter, "Helvetica Neue", Arial, sans-serif;
+  letter-spacing: 0.5px;
+  line-height: 1.1;
+}
+.advisor-card__role {
+  margin: 10px 0 0;
+  color: var(--primaryBoldColor);
+  font: 600 13px Inter, "Helvetica Neue", Arial, sans-serif;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+.advisor-card__affil {
+  margin: 8px 0 0;
+  color: var(--primaryColor);
+  font: 500 clamp(15px, 1.5vw, 18px) Inter, "Helvetica Neue", Arial, sans-serif;
+  letter-spacing: 0.4px;
+}
+.advisor-card__bio {
+  margin: 18px 0 0;
+  max-width: 62ch;
+  color: var(--secondaryColor);
+  font: 400 clamp(14px, 1.3vw, 16px) / 1.7 Inter, "Helvetica Neue", Arial, sans-serif;
+  opacity: 0.82;
+}
+.advisor-card__social {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  align-self: flex-start;
+  margin-top: 22px;
+  padding: 10px 16px;
+  border: 1px solid var(--wallLine);
+  border-radius: 4px;
+  color: var(--secondaryColor);
+  font: 500 13px Inter, "Helvetica Neue", Arial, sans-serif;
+  letter-spacing: 1px;
+  transition: border-color 180ms var(--contentTransitionBezier),
+              color 180ms var(--contentTransitionBezier);
+}
+.advisor-card__social:hover {
+  border-color: var(--primaryColor);
+  color: var(--primaryColor);
+}
+.advisor-card__social img { display: block; }
+
+@media only screen and (max-width: 760px) {
+  .advisor-card {
+    grid-template-columns: 1fr;
+    justify-items: start;
+    gap: 20px;
+    border-left-width: 3px;
+  }
+  .advisor-card__photo { width: min(180px, 46vw); }
+}
+
+/* ==========================================================================
+   Display type — Space Grotesk
+   Inter carries body copy (set globally above); Space Grotesk is reserved for
+   headings, nav and the loader, so the two faces stay in distinct roles.
+   ========================================================================== */
+.content-section__title,
+.advisor-card__name,
+.loader__text,
+.main-letters,
+.menu-list__item,
+.fixed-content-header__contact,
+.content-portfolio__name,
+.extended-services__service,
+.content-services__service {
+  font-family: "Space Grotesk", "Helvetica Neue", Arial, sans-serif;
+}
+
+/* Space Grotesk runs wide; pull the big headings back in. */
+.content-section__title {
+  letter-spacing: -0.015em;
+}
+.advisor-card__name {
+  letter-spacing: -0.02em;
+}
+/* Uppercase nav needs the opposite treatment. */
+.menu-list__item {
+  letter-spacing: 0.14em;
+}
+
+/* ==========================================================================
+   Team grid
+   The roster element also carries .content-section__images, which is built for
+   the scattered absolute layout — flex-basis: 50% and margin-left: -150px.
+   Those confined the whole roster to half the section and pushed it off centre,
+   which is what forced 120px columns and the cramped wrapping. Reset here so
+   the grid uses the real width. 12 members divide evenly by 6 / 4 / 3 / 2, so
+   every breakpoint fills its last row.
+   ========================================================================== */
+.content-section__images--grid {
+  display: grid !important;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 46px 28px;
+  width: min(1180px, 92%) !important;
+  flex-basis: auto !important;
+  height: auto !important;
+  margin: 10px auto 0 !important;
+  position: relative;
+}
+
+.content-section__images--grid .content-section__image-holder {
+  position: relative !important;
+  left: auto !important;
+  top: auto !important;
+  transform: none !important;
+  width: 100% !important;
+  height: auto !important;
+  flex-basis: auto !important;
+  display: flex !important;
+  flex-direction: column;
+  align-items: center;
+  border: none !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  overflow: visible !important;
+  margin: 0 !important;
+  transition: opacity 400ms 100ms var(--contentTransitionBezier) !important;
+}
+.content-section.section--hidden .content-section__images--grid .content-section__image-holder {
+  opacity: 0;
+}
+
+/* <picture> must not become the flex item; the <img> keeps the circle styling */
+.content-section__image-holder picture { display: contents; }
+
+.content-section__images--grid .content-section__image {
+  width: clamp(92px, 8.8vw, 130px) !important;
+  height: clamp(92px, 8.8vw, 130px) !important;
+  border-radius: 50% !important;
+  border: 3px solid var(--primaryBlackColor) !important;
+  box-shadow: 0 0 22px 6px rgba(4, 7, 12, 0.95) !important;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+/* The name reserves two lines whether it needs them or not, so the role below
+   lines up across the row instead of stepping up and down. */
+.content-section__images--grid .content-section__image-text-name {
+  position: static !important;
+  transform: none !important;
+  left: auto !important;
+  bottom: auto !important;
+  width: 100% !important;
+  height: auto !important;
+  min-height: 2.5em;
+  display: block !important;
+  text-align: center;
+  margin-top: 16px !important;
+  white-space: normal;
+  text-wrap: balance;
+  font: 600 15.5px/1.25 "Space Grotesk", "Helvetica Neue", Arial, sans-serif !important;
+  letter-spacing: 0 !important;
+}
+
+.content-section__images--grid .content-section__image-text-title {
+  position: static !important;
+  transform: none !important;
+  left: auto !important;
+  bottom: auto !important;
+  width: 100% !important;
+  height: auto !important;
+  display: block !important;
+  text-align: center;
+  margin-top: 4px !important;
+  white-space: normal;
+  text-wrap: balance;
+  font: 400 12.5px/1.45 Inter, "Helvetica Neue", Arial, sans-serif !important;
+  letter-spacing: 0.02em !important;
+  color: #9FB0C4 !important;
+}
+
+@media only screen and (max-width: 1024px) {
+  .content-section__images--grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 40px 24px;
+  }
+}
+@media only screen and (max-width: 760px) {
+  .content-section__images--grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 32px 18px;
+    width: 94% !important;
+  }
+  .content-section__images--grid .content-section__image-text-name {
+    font-size: 13.5px !important;
+    margin-top: 12px !important;
+  }
+  .content-section__images--grid .content-section__image-text-title { font-size: 11px !important; }
+}
+@media only screen and (max-width: 480px) {
+  .content-section__images--grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 28px 16px;
+  }
+}
+
+/* ==========================================================================
+   Footer social icons
+   Traditional brand marks (Simple Icons), painted via mask so they are
+   reliably white on the dark footer regardless of the source fill, and take
+   the brand's colour on hover. X replaces Twitter. The old markup sat on a
+   10px anchor margin, which is what made them read as crowded.
+   ========================================================================== */
+.social-links {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.social-links__anchor {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  margin: 0 !important;
+  padding: 2px;
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+.social-links__icon {
+  display: block;
+  width: 21px;
+  height: 21px;
+  background-color: var(--secondaryColor);
+  opacity: 0.58;
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+          mask-position: center;
+  -webkit-mask-size: contain;
+          mask-size: contain;
+  transition: background-color 180ms var(--contentTransitionBezier),
+              opacity 180ms var(--contentTransitionBezier);
+}
+
+.social-links__anchor:hover .social-links__icon,
+.social-links__anchor:focus-visible .social-links__icon {
+  background-color: var(--brand, var(--primaryColor));
+  opacity: 1;
+}
+
+/* The LinkedIn mark is also used as a button icon and in the advisor card.
+   Simple Icons ship black-filled, so force them white for the dark UI.
+   (Already-white icons such as email.svg are unaffected by this filter.) */
+.button__image,
+.advisor-card__social img {
+  filter: brightness(0) invert(1);
+}
+
+@media only screen and (max-width: 600px) {
+  .social-links { gap: 22px; }
+  .social-links__icon { width: 19px; height: 19px; }
 }

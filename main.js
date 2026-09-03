@@ -6,11 +6,11 @@ const configuration = {
   NumberOfVerticalLines: 20,
   NumberOfDots: 2000,
   colors: {
-    CanvasBackgroundColor: '#141414',
-    LettersColor: '#EBBC4E',
-    LinesColors: ['#FFF', '#4C9FC8', '#EBBC4E'],
-    LowerLinesColors: ['#3d3d3d'],
-    DotsColor: '#4C9FC8'
+    CanvasBackgroundColor: '#0A0F18',
+    LettersColor: '#FFD200',
+    LinesColors: ['#FFFFFF', '#1B98E0', '#FFD200'],
+    LowerLinesColors: ['#1E3A5F'],
+    DotsColor: '#1B98E0'
   }
 }
 ///////////////////////////////
@@ -77,6 +77,7 @@ function init() {
   // Add listeners.
   window.addEventListener('resize', windowResize, false)
   window.addEventListener('wheel', windowWheelOrTouch, false)
+  window.addEventListener('keydown', windowKeydown, false)
   window.addEventListener('touchstart', e => { touchStartPosition = e.touches[0].pageY }, false)
   window.addEventListener('touchmove', windowWheelOrTouch, false)
   if (!isMobile()) window.addEventListener('mousemove', mouseMove, false)
@@ -360,6 +361,23 @@ function windowResize () {
   camera.updateProjectionMatrix()
 
   renderer.setSize(window.innerWidth, window.innerHeight)
+}
+
+// Arrow / PageUp / PageDown paging. The site was previously wheel- and touch-only,
+// which left it unusable by keyboard.
+function windowKeydown (e) {
+  if (e.metaKey || e.ctrlKey || e.altKey) return
+  const t = e.target
+  if (t && (t.tagName === 'INPUT' || t.tagName === 'TEXTAREA' || t.isContentEditable)) return
+  // Enter/Space on a nav control is handled by UI, not here.
+  if (t && t.dataset && t.dataset.page !== undefined) return
+
+  const down = e.key === 'ArrowDown' || e.key === 'PageDown'
+  const up = e.key === 'ArrowUp' || e.key === 'PageUp'
+  if (!down && !up) return
+
+  e.preventDefault()
+  windowWheelOrTouch({ deltaY: down ? 1 : -1 })
 }
 
 function windowWheelOrTouch (e) {
