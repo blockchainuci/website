@@ -6,11 +6,11 @@ const configuration = {
   NumberOfVerticalLines: 20,
   NumberOfDots: 2000,
   colors: {
-    CanvasBackgroundColor: '#141414',
-    LettersColor: '#EBBC4E',
-    LinesColors: ['#FFF', '#4C9FC8', '#EBBC4E'],
-    LowerLinesColors: ['#3d3d3d'],
-    DotsColor: '#4C9FC8'
+    CanvasBackgroundColor: '#0A0F18',
+    LettersColor: '#FFD200',
+    LinesColors: ['#FFFFFF', '#1B98E0', '#FFD200'],
+    LowerLinesColors: ['#1E3A5F'],
+    DotsColor: '#1B98E0'
   }
 }
 ///////////////////////////////
@@ -76,9 +76,10 @@ function init() {
 
   // Add listeners.
   window.addEventListener('resize', windowResize, false)
-  window.addEventListener('wheel', windowWheelOrTouch, false)
-  window.addEventListener('touchstart', e => { touchStartPosition = e.touches[0].pageY }, false)
-  window.addEventListener('touchmove', windowWheelOrTouch, false)
+  window.addEventListener('wheel', onWheel, { passive: true })
+  window.addEventListener('keydown', windowKeydown, false)
+  window.addEventListener('touchstart', onTouchStart, { passive: true })
+  window.addEventListener('touchend', onTouchEnd, { passive: true })
   if (!isMobile()) window.addEventListener('mousemove', mouseMove, false)
 }
 
@@ -138,8 +139,6 @@ function loadMainLetters () {
   fontLoader.load('resources/fonts/Roboto-Black-3d.json', font => {
     let textGeometry = new THREE.TextGeometry(configuration.SiteName, { font: font, size: 5, height: 3, curveSegments: 3 })
     textGeometry.center()
-
-    textGeometry.scale(configuration.SiteNameSize, configuration.SiteNameSize, configuration.SiteNameSize)
 
     const textMaterial = new THREE.ShaderMaterial({
       uniforms: {
@@ -317,26 +316,23 @@ function loadMain2DLetters () {
 }
 
 function isMobile () {
-  try {
-    document.createEvent('touchEvent')
-    return true
-  } catch (err) { return false }
+  return ('ontouchstart' in window) || (navigator.maxTouchPoints > 0) || window.innerWidth <= 768
 }
 
 function uiCallback () {
   return {
     onPagingClick (pagingIndex) {
-      if (sceneMovedAmmount > sceneMovedAmmount) ui.ui_moveScene('down')
-      else ui.ui_moveScene('up')
-
+      if (pagingIndex === sceneMovedAmmount) return
+      const direction = pagingIndex > sceneMovedAmmount ? 'down' : 'up'
       sceneMovedAmmount = pagingIndex
       moveScene()
+      ui.ui_moveScene(direction)
     },
     getCurrentPage () {
       return sceneMovedAmmount
     },
     blockSceneScrolling (active) {
-      active ? timeoutActive = true : timeoutActive = false
+      timeoutActive = !!active
     }
   }
 }
@@ -350,11 +346,27 @@ function moveScene () {
   .start()
 }
 
+function getResponsiveTextScale () {
+  const aspect = window.innerWidth / window.innerHeight
+  if (aspect < 0.7) {
+    // Narrow phone portrait (e.g. 19.5:9, 20:9)
+    return Math.min(window.innerWidth / 1600, 0.22)
+  } else if (aspect < 0.85) {
+    // Standard phone portrait
+    return Math.min(window.innerWidth / 1400, 0.25)
+  } else if (aspect < 1.2) {
+    // Tablet / square
+    return Math.min(window.innerWidth / 1250, 0.35)
+  } else {
+    // Desktop / landscape
+    return Math.min(window.innerWidth / 1100, 0.45)
+  }
+}
+
 function windowResize () {
   if (mainLettersMesh) {
-    const scaleAmmount = Math.min(window.innerWidth / 1100, 1)
-    mainLettersMesh.scale.x = scaleAmmount
-    mainLettersMesh.scale.y = scaleAmmount
+    const scale = getResponsiveTextScale()
+    mainLettersMesh.scale.set(scale, scale, scale)
   }
   camera.aspect = window.innerWidth / window.innerHeight
   camera.updateProjectionMatrix()
@@ -362,26 +374,101 @@ function windowResize () {
   renderer.setSize(window.innerWidth, window.innerHeight)
 }
 
-function windowWheelOrTouch (e) {
-  // Limit scrolling to scroll only once in N milliseconds.
+function stepPage (direction) {
   if (timeoutActive) return
-  timeoutActive = true
-  setTimeout(() => { timeoutActive = false }, 1500)
-
-  if (e.deltaY > 0 || (e.touches && e.touches[0].pageY < touchStartPosition)) {
-    if (sceneMovedAmmount === 8) return
+  if (direction === 'down') {
+    if (sceneMovedAmmount >= 8) return
+    timeoutActive = true
+    setTimeout(() => { timeoutActive = false }, 800)
     sceneMovedAmmount++
-    sceneMovedAmmount = Math.min(sceneMovedAmmount, 8)
     moveScene()
     ui.ui_moveScene('down')
-    return
+  } else if (direction === 'up') {
+    if (sceneMovedAmmount <= 0) return
+    timeoutActive = true
+    setTimeout(() => { timeoutActive = false }, 800)
+    sceneMovedAmmount--
+    moveScene()
+    ui.ui_moveScene('up')
+  }
+}
+
+function onWheel (e) {
+  if (timeoutActive) return
+  if (document.querySelector('.popup--active') || document.querySelector('.menu-opened')) return
+
+  const activeSection = document.querySelector(`.content-section[data-page="${sceneMovedAmmount}"]`)
+  if (activeSection) {
+    const isScrollable = activeSection.scrollHeight > activeSection.clientHeight + 10
+    if (isScrollable) {
+      if (e.deltaY > 0 && activeSection.scrollTop + activeSection.clientHeight < activeSection.scrollHeight - 10) {
+        return
+      }
+      if (e.deltaY < 0 && activeSection.scrollTop > 10) {
+        return
+      }
+    }
   }
 
-  if (sceneMovedAmmount === 0) return
-  sceneMovedAmmount--
-  sceneMovedAmmount = Math.max(sceneMovedAmmount, 0)
-  moveScene()
-  ui.ui_moveScene('up')
+  if (Math.abs(e.deltaY) < 12) return
+  stepPage(e.deltaY > 0 ? 'down' : 'up')
+}
+
+let touchStartX = 0
+let touchStartY = 0
+
+function onTouchStart (e) {
+  if (!e.touches || e.touches.length === 0) return
+  touchStartX = e.touches[0].clientX
+  touchStartY = e.touches[0].clientY
+}
+
+function onTouchEnd (e) {
+  if (!e.changedTouches || e.changedTouches.length === 0) return
+  if (timeoutActive) return
+  if (document.querySelector('.popup--active') || document.querySelector('.menu-opened')) return
+
+  const deltaX = e.changedTouches[0].clientX - touchStartX
+  const deltaY = e.changedTouches[0].clientY - touchStartY
+  const absX = Math.abs(deltaX)
+  const absY = Math.abs(deltaY)
+
+  // If gesture was predominantly horizontal, let the carousel scroll freely!
+  if (absX >= absY) return
+
+  // Require minimum vertical swipe displacement
+  if (absY < 45) return
+
+  // Check if active section can scroll vertically before navigating pages
+  const activeSection = document.querySelector(`.content-section[data-page="${sceneMovedAmmount}"]`)
+  if (activeSection) {
+    const isScrollable = activeSection.scrollHeight > activeSection.clientHeight + 10
+    if (isScrollable) {
+      if (deltaY < 0 && activeSection.scrollTop + activeSection.clientHeight < activeSection.scrollHeight - 10) {
+        return
+      }
+      if (deltaY > 0 && activeSection.scrollTop > 10) {
+        return
+      }
+    }
+  }
+
+  stepPage(deltaY < 0 ? 'down' : 'up')
+}
+
+// Arrow / PageUp / PageDown paging
+function windowKeydown (e) {
+  if (e.metaKey || e.ctrlKey || e.altKey) return
+  const t = e.target
+  if (t && (t.tagName === 'INPUT' || t.tagName === 'TEXTAREA' || t.isContentEditable)) return
+  if (t && t.dataset && t.dataset.page !== undefined) return
+
+  const down = e.key === 'ArrowDown' || e.key === 'PageDown'
+  const up = e.key === 'ArrowUp' || e.key === 'PageUp'
+  if (!down && !up) return
+
+  e.preventDefault()
+  stepPage(down ? 'down' : 'up')
 }
 
 function mouseMove (e) {

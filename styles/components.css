@@ -1,66 +1,51 @@
-/* BUTTONS */
+/* ==========================================================================
+   BUTTONS
+   ========================================================================== */
 
-/* Styles for screens 600px and smaller */
-@media only screen and (max-width: 600px) {
 .button {
   position: relative;
   border: none;
   background-color: transparent;
-  letter-spacing: 2px;
-  font: 700 Roboto, sans-serif;
+  padding: 14px 28px;
+  letter-spacing: var(--letterSpacing);
+  font: 600 var(--primaryTextSize) "Space Grotesk", Inter, "Helvetica Neue", Arial, sans-serif;
   border-radius: var(--radius);
   cursor: pointer;
   overflow: hidden;
   white-space: nowrap;
-}
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+  transition: transform 180ms ease, background-color 200ms ease, color 200ms ease, border-color 200ms ease, box-shadow 200ms ease;
+  user-select: none;
 }
 
-/* Styles for screens 601px and bigger */
-@media only screen and (min-width: 601px) {
-  .button {
-    position: relative;
-    border: none;
-    background-color: transparent;
-    padding: 15px 30px;
-    letter-spacing: var(--letterSpacing);
-    font: 700 var(--primaryTextSize) Roboto, sans-serif;
-    border-radius: var(--radius);
-    cursor: pointer;
-    overflow: hidden;
-    white-space: nowrap;
-  }
-  }
+.button:active {
+  transform: scale(0.97);
+}
 
 .button__image {
   width: 20px;
-  filter: invert(100%);
+  height: 20px;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+  flex-shrink: 0;
 }
+
 .button__text {
   z-index: 1;
 }
 
-/* Styles for screens 601px and bigger */
-@media only screen and (min-width: 601px) {
 .button--primary {
-  background-color: var(--primaryColor);
+  background-color: var(--primaryDeepColor);
   color: var(--secondaryColor);
-  position: relative;
-  z-index: 1;
-  margin: 20px;
+  border: 1px solid var(--primaryColor);
+  box-shadow: 0 4px 18px rgba(27, 152, 224, 0.25);
+  margin: 10px;
 }
-}
-
-/* Styles for screens 600px and smaller */
-@media only screen and (max-width: 600px) {
-  .button--primary {
-    text-align: center;
-    max-width: 110px;
-    background-color: var(--primaryColor);
-    color: var(--secondaryColor);
-    position: relative;
-    z-index: 1;
-  }
-  }
 
 .button--primary::before,
 .button--primary::after {
@@ -70,26 +55,39 @@
   width: 0;
   height: 100%;
   content: '';
-  z-index: -1;
+  z-index: 0;
   transition: width 400ms ease;
 }
-.button--primary:hover::before {
+
+.button--primary:hover::before,
+.button--primary:focus-visible::before {
   width: 100%;
   transition: width 300ms ease;
   background-color: var(--primaryBoldColor);
 }
-.button--primary:hover::after {
-  width: 20px;
-  transition: width 200ms 200ms ease;
-  background-color: var(--primaryBlackColor);
+
+.button--primary:hover,
+.button--primary:focus-visible {
+  color: #0A0F18;
+  border-color: var(--primaryBoldColor);
+  box-shadow: 0 6px 24px rgba(255, 210, 0, 0.35);
+}
+
+.button--primary:hover .button__image,
+.button--primary:focus-visible .button__image {
+  filter: brightness(0);
 }
 
 .button--icon {
-  background-color: var(--primaryColor);
+  background-color: var(--primaryDeepColor);
   color: var(--secondaryColor);
-  display: flex;
+  display: inline-flex;
   align-items: center;
+  gap: 12px;
+  border: 1px solid var(--primaryColor);
+  padding: 14px 28px;
 }
+
 .button--icon::before {
   content: '';
   position: absolute;
@@ -103,25 +101,35 @@
   transition: 300ms ease;
   opacity: 0;
   transform-origin: center;
+  z-index: 0;
 }
 
-.button--icon:hover::before {
-  animation: none;
-  transform: translateY(-50%) scale(1);
+.button--icon:hover::before,
+.button--icon:focus-visible::before {
+  transform: translateY(-50%) scale(1.6);
   opacity: 1;
-  transition: 1s ease;
+  transition: 600ms ease;
 }
 
-.button--icon > *:first-child {
-  margin-right: 10px;
+.button--icon:hover,
+.button--icon:focus-visible {
+  color: #0A0F18;
+  border-color: var(--primaryBoldColor);
+}
+
+.button--icon:hover .button__image,
+.button--icon:focus-visible .button__image {
+  filter: brightness(0);
 }
 
 .button--secondary {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   border: 2px solid var(--primaryColor);
   color: var(--secondaryColor);
+  background: transparent;
 }
+
 .button--secondary::before {
   content: '';
   position: absolute;
@@ -133,57 +141,98 @@
   transform: rotate(-45deg) translate(3px, 10px);
   transition: transform 600ms ease;
   transform-origin: bottom;
+  z-index: 0;
 }
-.button--secondary:hover::before {
+
+.button--secondary:hover::before,
+.button--secondary:focus-visible::before {
   transform: rotate(0) translate(0, 0);
-  transition: transform 600ms ease;
+  width: 100%;
 }
 
+.button--secondary:hover,
+.button--secondary:focus-visible {
+  color: #0A0F18;
+  border-color: var(--primaryBoldColor);
+}
 
-/* BURGER BUTTON */
+/* ==========================================================================
+   BURGER MENU TOGGLE
+   ========================================================================== */
+
 .burger {
-  width: 35px;
+  background: transparent;
+  border: none;
+  padding: 10px 8px;
+  width: 32px;
+  height: 22px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
-}
-.burger:hover .burger__line:nth-of-type(1),
-.burger:hover .burger__line:nth-of-type(3) {
-  width: 100%;
-  transition: width 300ms ease;
-}
-
-.burger--active .burger__line:nth-of-type(1) {
-  transform: rotate(45deg) translate(8px, 4px);
-  width: 100%;
-  transition: transform 300ms ease;
-}
-.burger--active .burger__line:nth-of-type(2) {
-  transform: rotate(-45deg) translate(3px, 1px);
-  transition: transform 300ms ease;
-}
-.burger--active .burger__line:nth-of-type(3) {
-  display: none;
+  box-sizing: content-box;
+  z-index: 20;
 }
 
 .burger__line {
   width: 100%;
-  height: 3px;
-  margin-bottom: 7px;
+  height: 2.5px;
   background-color: var(--secondaryColor);
-  transition: 200ms ease;
-}
-.burger__line:nth-of-type(1) {
-  width: 40%;
-}
-.burger__line:nth-of-type(3) {
-  width: 70%;
-  margin-bottom: 0;
+  border-radius: 2px;
+  transition: transform 300ms cubic-bezier(0.83, 0.39, 0.21, 0.96),
+              opacity 200ms ease,
+              width 250ms ease,
+              background-color 200ms ease;
+  transform-origin: center;
 }
 
-@media only screen and (max-width: 769px) {
+.burger__line:nth-of-type(1) { width: 70%; }
+.burger__line:nth-of-type(2) { width: 100%; }
+.burger__line:nth-of-type(3) { width: 85%; }
+
+.burger:hover .burger__line,
+.burger:focus-visible .burger__line {
+  width: 100%;
+  background-color: var(--primaryBoldColor);
+}
+
+.burger--active .burger__line:nth-of-type(1) {
+  width: 100%;
+  transform: translateY(9.75px) rotate(45deg);
+  background-color: var(--primaryBoldColor);
+}
+
+.burger--active .burger__line:nth-of-type(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+
+.burger--active .burger__line:nth-of-type(3) {
+  width: 100%;
+  transform: translateY(-9.75px) rotate(-45deg);
+  background-color: var(--primaryBoldColor);
+}
+
+/* ==========================================================================
+   RESPONSIVE COMPONENT RULES
+   ========================================================================== */
+
+@media only screen and (max-width: 768px) {
   .button {
-    padding: 10px 25px;
-    font: 700 var(--primaryTextSizeS) Roboto, sans-serif;
+    padding: 10px 18px;
+    font-size: 13px;
+    letter-spacing: 1.5px;
+    min-height: 42px;
+  }
+
+  .button--primary {
+    margin: 0;
+  }
+
+  .button--icon {
+    padding: 11px 20px;
+    gap: 8px;
   }
 
   .button--secondary::before {
@@ -191,23 +240,16 @@
   }
 
   .burger {
-    width: 25px;
+    width: 28px;
+    height: 20px;
+    padding: 8px 6px;
   }
 
-  .burger__line:nth-of-type(2) {
-    margin-bottom: 20;
+  .burger--active .burger__line:nth-of-type(1) {
+    transform: translateY(8.75px) rotate(45deg);
   }
 
-  .burger__line:nth-of-type(1) {
-    width: 100%;
+  .burger--active .burger__line:nth-of-type(3) {
+    transform: translateY(-8.75px) rotate(-45deg);
   }
-  
-  .burger__line:nth-of-type(2) {
-    width: 100%;
-  }
-  
-  .burger__line:nth-of-type(3) {
-    width: 100%;
-  }
-
 }

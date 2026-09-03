@@ -5,31 +5,58 @@
 	<head>
 		<title>Blockchain at UCI</title>
 		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=5.0" />
-		<meta name="theme-color" content="#4C9FC8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+		<meta name="theme-color" content="#0A0F18" />
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap">
 		<link type="text/css" rel="stylesheet" href="./styles/main.css" />
 		<link type="text/css" rel="stylesheet" href="./styles/slider.css" />
 		<link type="text/css" rel="stylesheet" href="./styles/components.css" />
-		<link rel="shortcut icon" type="image/x-icon" href="resources/favicon.ico" />
+		<link rel="icon" type="image/png" sizes="32x32" href="./resources/favicon-32.png" />
+		<link rel="apple-touch-icon" sizes="180x180" href="./resources/apple-touch-icon.png" />
+		<link rel="shortcut icon" type="image/x-icon" href="./resources/favicon.ico" />
+		<link rel="canonical" href="https://www.uciblockchain.org/" />
 		<!-- Primary Meta Tags -->
-		<meta name="title" content="Blockchain at UCI">
-		<meta name="description" content="The Blockchain club at UC Irvine">
+		<meta name="title" content="Blockchain at UCI — Student Blockchain & Crypto Club">
+		<meta name="description" content="Blockchain at UCI is the student-run blockchain and crypto club at UC Irvine. We run workshops, build projects, host industry speakers, and connect members to internships and jobs in Web3.">
 		<!-- Open Graph / Facebook -->
 		<meta property="og:type" content="website">
-		<meta property="og:title" content="Blockchain at UCI">
-		<meta property="og:image" content="https://www.blockchainuci.org/resources/banner.png">
-		<meta property="og:description" content="The Blockchain club at UC Irvine">
-		<meta property="og:url" content="http://blockchainuci.org">
+		<meta property="og:site_name" content="Blockchain at UCI">
+		<meta property="og:title" content="Blockchain at UCI — Student Blockchain & Crypto Club">
+		<meta property="og:image" content="https://www.uciblockchain.org/resources/banner.png">
+		<meta property="og:image:alt" content="Blockchain at UCI banner">
+		<meta property="og:description" content="Blockchain at UCI is the student-run blockchain and crypto club at UC Irvine. We run workshops, build projects, host industry speakers, and connect members to internships and jobs in Web3.">
+		<meta property="og:url" content="https://www.uciblockchain.org/">
 		<meta property="og:locale" content="en_US">
 		<!-- Twitter -->
 		<meta property="twitter:card" content="summary_large_image">
-		<meta property="twitter:title" content="Blockchain at UCI">
-		<meta property="twitter:description" content="The Blockchain club at UC Irvine">
-		<meta property="twitter:image" content="https://www.blockchainuci.org/resources/banner.png">
-		<!-- "Borrowed" from UCI's SEO lmao -->
-		<meta name="keywords"
-			content="blockchain, blockchain technology, blockchain technologies, uci blockchain, uci club, uci blockchain club, uci block, bitcoin, ethereum, eth, sol, solana, crypto, uci crypto, uci crytpotocurrency, cryptocurrency, cryptocurrencies, programming, programmer, computer scientists, data scientists, engineer, classes, courses, tech training, technology training, certificates, relational database, UCI Division of Continuing Education, UCI Continuing Education" />
+		<meta property="twitter:title" content="Blockchain at UCI — Student Blockchain & Crypto Club">
+		<meta property="twitter:description" content="Blockchain at UCI is the student-run blockchain and crypto club at UC Irvine. We run workshops, build projects, host industry speakers, and connect members to internships and jobs in Web3.">
+		<meta property="twitter:image" content="https://www.uciblockchain.org/resources/banner.png">
+		<meta name="keywords" content="blockchain at uci, uci blockchain club, uc irvine blockchain, uci crypto club, student blockchain club, web3, ethereum, solana, bitcoin, blockchain workshops" />
 		<meta name="robots" content="all,index,follow" />
+		<!-- Structured data: helps Google re-associate the club with the NEW domain -->
+		<script type="application/ld+json">
+		{
+		  "@context": "https://schema.org",
+		  "@type": "Organization",
+		  "name": "Blockchain at UCI",
+		  "alternateName": "UCI Blockchain Club",
+		  "url": "https://www.uciblockchain.org/",
+		  "logo": "https://www.uciblockchain.org/resources/logo.png",
+		  "description": "Blockchain at UCI is the student-run blockchain and crypto club at UC Irvine. We run workshops, build projects, host industry speakers, and connect members to internships and jobs in Web3.",
+		  "parentOrganization": {
+		    "@type": "CollegeOrUniversity",
+		    "name": "University of California, Irvine"
+		  },
+		  "sameAs": [
+		    "https://github.com/blockchainuci/",
+		    "https://www.instagram.com/blockchainuci/",
+		    "https://x.com/UCIBlockchain"
+		  ]
+		}
+		</script>
 		<!-- Fathom - simple website analytics - https://github.com/usefathom/fathom -->
 		<script>
 			(function (f, a, t, h, o, m) {
@@ -47,6 +74,7 @@
 		<!-- / Fathom -->
 	</head>
 	<body>
+		<a class="skip-link" href="#main-content">Skip to content</a>
 		<!-- MAIN UI ELEMENTS -->
 		<main class="ui-wrapper page-not-loaded">
 			<!-- LOADER -->
@@ -56,31 +84,34 @@
 			<!-- MAIN MENU -->
 			<div class="menu">
 				<ul class="menu-list">
-					<li class="menu-list__item" data-page="1">ABOUT US</li>
-					<li class="menu-list__item" data-page="2">WHAT WE DO</li>
-					<li class="menu-list__item" data-page="3">MEET THE TEAM</li>
-					<li class="menu-list__item" data-page="4">ADVISORS</li>
-					<li class="menu-list__item" data-page="5">MAJOR EVENTS</li>
-					<li class="menu-list__item" data-page="6">SPONSORS</li>
-					<li class="menu-list__item" data-page="7">WHERE WE'VE WORKED</li>
-					<li class="menu-list__item" data-page="8">CONTACT US</li>
+					<li class="menu-list__item" data-page="1" role="button" tabindex="0">ABOUT US</li>
+					<li class="menu-list__item" data-page="2" role="button" tabindex="0">WHAT WE DO</li>
+					<li class="menu-list__item" data-page="3" role="button" tabindex="0">MEET THE TEAM</li>
+					<li class="menu-list__item" data-page="4" role="button" tabindex="0">ADVISORS</li>
+					<li class="menu-list__item" data-page="5" role="button" tabindex="0">MAJOR EVENTS</li>
+					<li class="menu-list__item" data-page="6" role="button" tabindex="0">SPONSORS</li>
+					<li class="menu-list__item" data-page="7" role="button" tabindex="0">WHERE WE'VE WORKED</li>
+					<li class="menu-list__item" data-page="8" role="button" tabindex="0">CONTACT US</li>
 				</ul>
 			</div>
 			<!-- VIDEO POPUP -->
 			<div class="popup" data-popup="video">
+				<button class="popup__close-button" aria-label="Close signup form" type="button">×</button>
 				<iframe width="60%" height="100%" title="Signup form"
 					src="https://5baa06fa.sibforms.com/serve/MUIEAAq85cwSjG9N9sLFqFUSr-rV3dFeMqmlMomGnfPAkSgJ30FUytIK3cEYmoyWfk613vKopO3hWXpo4QAFy-pD5q_ZmIkuSPTRnZzboh-rltBayzxCJXbggRWYpKuWxDO-UBTFnDbemOCDHx6JfJL6h8wTIPrNSPiOx4e-P5rYi721V10WjgcfPaW3cm31yh6sfbRPEcAMUl7G"></iframe>
 			</div>
 			<!-- ALL FIXED CONTENT (EG. HEADER, FOOTER) -->
 			<!-- HEADER -->
 			<header class="fixed-content-header">
-				<div class="flex flex--center">
-					<div class="burger" data-follow>
-						<div class="burger__line"></div>
-						<div class="burger__line"></div>
-						<div class="burger__line"></div>
-					</div>
-					<div class="flex flex--center" data-follow><img src="./resources/logo.png" height="100" alt="Logo"></div>
+				<div class="header-nav-group flex flex--center">
+					<button class="burger" aria-label="Toggle navigation menu" type="button" data-follow>
+						<span class="burger__line"></span>
+						<span class="burger__line"></span>
+						<span class="burger__line"></span>
+					</button>
+					<a href="#" class="header-logo-link flex flex--center" data-page="0" aria-label="Blockchain at UCI Home">
+						<img src="./resources/logo.png" class="header-logo" alt="Blockchain at UCI Logo" />
+					</a>
 				</div>
 				<div class="fixed-content-header__contact">
 
@@ -89,43 +120,47 @@
 			</header>
 			<!-- PAGING -->
 			<div class="fixed-content-paging">
-				<div class="paging__page" data-page="0"></div>
-				<div class="paging__page section--hidden" data-page="1"></div>
-				<div class="paging__page section--hidden" data-page="2"></div>
-				<div class="paging__page section--hidden" data-page="3"></div>
-				<div class="paging__page section--hidden" data-page="4"></div>
-				<div class="paging__page section--hidden" data-page="5"></div>
-				<div class="paging__page section--hidden" data-page="6"></div>
-				<div class="paging__page section--hidden" data-page="7"></div>
-				<div class="paging__page section--hidden" data-page="8"></div>
+				<div class="paging__page" data-page="0" role="button" tabindex="0" aria-label="Go to section 1"></div>
+				<div class="paging__page section--hidden" data-page="1" role="button" tabindex="0" aria-label="Go to section 2"></div>
+				<div class="paging__page section--hidden" data-page="2" role="button" tabindex="0" aria-label="Go to section 3"></div>
+				<div class="paging__page section--hidden" data-page="3" role="button" tabindex="0" aria-label="Go to section 4"></div>
+				<div class="paging__page section--hidden" data-page="4" role="button" tabindex="0" aria-label="Go to section 5"></div>
+				<div class="paging__page section--hidden" data-page="5" role="button" tabindex="0" aria-label="Go to section 6"></div>
+				<div class="paging__page section--hidden" data-page="6" role="button" tabindex="0" aria-label="Go to section 7"></div>
+				<div class="paging__page section--hidden" data-page="7" role="button" tabindex="0" aria-label="Go to section 8"></div>
+				<div class="paging__page section--hidden" data-page="8" role="button" tabindex="0" aria-label="Go to section 9"></div>
 			</div>
 			<!-- FOOTER -->
 			<div class="fixed-content-footer">
 				<div class="social-links">
-					<a class="social-links__anchor" href="https://www.linkedin.com/company/blockchain-at-uci">
-					<img class="social-links__image" data-follow src="./resources/images/socials/linkedin.svg" alt="Linkedin logo" width="20"
-						height="20">
-					</a>
-					<a class="social-links__anchor" href="https://twitter.com/UCIBlockchain">
-					<img class="social-links__image" data-follow src="./resources/images/socials/twitter.svg" alt="Twitter logo" width="20"
-						height="20">
-					</a>
-					<a class="social-links__anchor" href="https://www.instagram.com/uciblockchain">
-					<img class="social-links__image" data-follow src="./resources/images/socials/instagram.svg" alt="Instagram logo"
-						width="20" height="20">
-					</a>
-					<a class="social-links__anchor" href="https://github.com/blockchainuci/">
-					<img class="social-links__image" data-follow src="./resources/images/socials/github.svg" alt="Github logo" width="20"
-						height="20">
-					</a>
-				</div>
+				<a class="social-links__anchor" href="https://www.linkedin.com/company/blockchain-at-uci" target="_blank" rel="noopener"
+					aria-label="LinkedIn" style="--brand:#0A66C2">
+					<span class="social-links__icon"
+						style="-webkit-mask-image:url('./resources/images/socials/linkedin.svg?v=3');mask-image:url('./resources/images/socials/linkedin.svg?v=3')"></span>
+				</a>
+				<a class="social-links__anchor" href="https://x.com/UCIBlockchain" target="_blank" rel="noopener"
+					aria-label="X" style="--brand:#E8ECF1">
+					<span class="social-links__icon"
+						style="-webkit-mask-image:url('./resources/images/socials/x.svg?v=3');mask-image:url('./resources/images/socials/x.svg?v=3')"></span>
+				</a>
+				<a class="social-links__anchor" href="https://www.instagram.com/blockchainuci/" target="_blank" rel="noopener"
+					aria-label="Instagram" style="--brand:#E4405F">
+					<span class="social-links__icon"
+						style="-webkit-mask-image:url('./resources/images/socials/instagram.svg?v=3');mask-image:url('./resources/images/socials/instagram.svg?v=3')"></span>
+				</a>
+				<a class="social-links__anchor" href="https://github.com/blockchainuci/" target="_blank" rel="noopener"
+					aria-label="GitHub" style="--brand:#E8ECF1">
+					<span class="social-links__icon"
+						style="-webkit-mask-image:url('./resources/images/socials/github.svg?v=3');mask-image:url('./resources/images/socials/github.svg?v=3')"></span>
+				</a>
+			</div>
 				<div class="fixed-content-footer__copy">
 					<span class="footer-copy__date"></span>
 					<span class="footer-copy__name" id="copyright">Blockchain at UCI</span>
 				</div>
 			</div>
 			<!-- MAIN CONTENT -->
-			<div class="content">
+			<div class="content" id="main-content" tabindex="-1">
 				<div class="content-section" data-page="0">
 					<div class="configuration__letters configuration__letters--hidden">
 						<span class="configuration__letters-text">BLOCKCHAIN at UCI</span>
@@ -202,195 +237,236 @@
 				</div>
 				<div class="content-section section--hidden content-section" data-page="3">
 					<h1 class="content-section__title">MEET THE TEAM</h1>
-					<div class="content-section__images content-section__images--grid">
+					<div class="carousel-container" data-carousel="team">
+						<button class="carousel-btn carousel-btn--prev" aria-label="Previous team members" type="button">
+							<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+						</button>
+						<div class="content-section__images content-section__images--grid carousel-track" id="team-carousel-track">
 						<div class="content-section__image-holder">
-							<img class="content-section__image" src="./resources/images/people/michelle.jpg" alt="Team photo" />
+							<picture>
+								<source srcset="./resources/images/people/michelle.webp" type="image/webp" />
+								<img class="content-section__image" src="./resources/images/people/michelle.jpg"
+									alt="Michelle Makhija, Co-President" width="100" height="100" loading="lazy" decoding="async" />
+							</picture>
 							<span class="content-section__image-text-name">Michelle Makhija</span>
 							<span class="content-section__image-text-title">Co-President</span>
 						</div>
 						<div class="content-section__image-holder">
-							<img class="content-section__image" src="./resources/images/people/mitali.jpg" alt="Team photo" />
+							<picture>
+								<source srcset="./resources/images/people/mitali.webp" type="image/webp" />
+								<img class="content-section__image" src="./resources/images/people/mitali.jpg"
+									alt="Mitali Mittal, Co-President" width="100" height="100" loading="lazy" decoding="async" />
+							</picture>
 							<span class="content-section__image-text-name">Mitali Mittal</span>
 							<span class="content-section__image-text-title">Co-President</span>
 						</div>
 						<div class="content-section__image-holder">
-							<img class="content-section__image" src="./resources/images/people/bihan.jpg" alt="Team photo" />
+							<picture>
+								<source srcset="./resources/images/people/bihan.webp" type="image/webp" />
+								<img class="content-section__image" src="./resources/images/people/bihan.jpg"
+									alt="Bihan Dasgupta, Vice President" width="100" height="100" loading="lazy" decoding="async" />
+							</picture>
 							<span class="content-section__image-text-name">Bihan Dasgupta</span>
 							<span class="content-section__image-text-title">Vice President</span>
 						</div>
 						<div class="content-section__image-holder">
-							<img class="content-section__image" src="./resources/images/people/anjali.jpg" alt="Team photo" />
+							<picture>
+								<source srcset="./resources/images/people/anjali.webp" type="image/webp" />
+								<img class="content-section__image" src="./resources/images/people/anjali.jpg"
+									alt="Anjali Kumar, Project Manager" width="100" height="100" loading="lazy" decoding="async" />
+							</picture>
 							<span class="content-section__image-text-name">Anjali Kumar</span>
 							<span class="content-section__image-text-title">Project Manager</span>
 						</div>
 						<div class="content-section__image-holder">
-							<img class="content-section__image" src="./resources/images/people/pamela.jpg" alt="Team photo" />
+							<picture>
+								<source srcset="./resources/images/people/pamela.webp" type="image/webp" />
+								<img class="content-section__image" src="./resources/images/people/pamela.jpg"
+									alt="Pamela Cabingao, Marketing Director" width="100" height="100" loading="lazy" decoding="async" />
+							</picture>
 							<span class="content-section__image-text-name">Pamela Cabingao</span>
 							<span class="content-section__image-text-title">Marketing Director</span>
 						</div>
 						<div class="content-section__image-holder">
-							<img class="content-section__image" src="./resources/images/people/sumanth.jpg" alt="Team photo" />
+							<picture>
+								<source srcset="./resources/images/people/sumanth.webp" type="image/webp" />
+								<img class="content-section__image" src="./resources/images/people/sumanth.jpg"
+									alt="Sumanth Pallamreddy, Technical Lead" width="100" height="100" loading="lazy" decoding="async" />
+							</picture>
 							<span class="content-section__image-text-name">Sumanth Pallamreddy</span>
 							<span class="content-section__image-text-title">Technical Lead</span>
 						</div>
 						<div class="content-section__image-holder">
-							<img class="content-section__image" src="./resources/images/people/enrico.jpg" alt="Team photo" />
+							<picture>
+								<source srcset="./resources/images/people/enrico.webp" type="image/webp" />
+								<img class="content-section__image" src="./resources/images/people/enrico.jpg"
+									alt="Enrico Appiani, Technical Advisor" width="100" height="100" loading="lazy" decoding="async" />
+							</picture>
 							<span class="content-section__image-text-name">Enrico Appiani</span>
 							<span class="content-section__image-text-title">Technical Advisor</span>
 						</div>
 						<div class="content-section__image-holder">
-							<img class="content-section__image" src="./resources/images/people/jordan.jpg" alt="Team photo" />
+							<picture>
+								<source srcset="./resources/images/people/jordan.webp" type="image/webp" />
+								<img class="content-section__image" src="./resources/images/people/jordan.jpg"
+									alt="Jordan Finn, Technical Advisor" width="100" height="100" loading="lazy" decoding="async" />
+							</picture>
 							<span class="content-section__image-text-name">Jordan Finn</span>
 							<span class="content-section__image-text-title">Technical Advisor</span>
 						</div>
 						<div class="content-section__image-holder">
-							<img class="content-section__image" src="./resources/images/people/tobin.jpg" alt="Team photo" />
+							<picture>
+								<source srcset="./resources/images/people/tobin.webp" type="image/webp" />
+								<img class="content-section__image" src="./resources/images/people/tobin.jpg"
+									alt="Tobin Sia, Business Development Lead" width="100" height="100" loading="lazy" decoding="async" />
+							</picture>
 							<span class="content-section__image-text-name">Tobin Sia</span>
 							<span class="content-section__image-text-title">Business Development Lead</span>
 						</div>
 						<div class="content-section__image-holder">
-							<img class="content-section__image" src="./resources/images/people/ethan-an.jpg" alt="Team photo" />
+							<picture>
+								<source srcset="./resources/images/people/ethan-an.webp" type="image/webp" />
+								<img class="content-section__image" src="./resources/images/people/ethan-an.jpg"
+									alt="Ethan An, Business Development Co-Lead" width="100" height="100" loading="lazy" decoding="async" />
+							</picture>
 							<span class="content-section__image-text-name">Ethan An</span>
 							<span class="content-section__image-text-title">Business Development Co-Lead</span>
 						</div>
 						<div class="content-section__image-holder">
-							<img class="content-section__image" src="./resources/images/people/chengyi.jpg" alt="Team photo" />
+							<picture>
+								<source srcset="./resources/images/people/chengyi.webp" type="image/webp" />
+								<img class="content-section__image" src="./resources/images/people/chengyi.jpg"
+									alt="Chengyi Yu, Business Development Intern" width="100" height="100" loading="lazy" decoding="async" />
+							</picture>
 							<span class="content-section__image-text-name">Chengyi Yu</span>
 							<span class="content-section__image-text-title">Business Development Intern</span>
 						</div>
 						<div class="content-section__image-holder">
-							<img class="content-section__image" src="./resources/images/people/bryan.jpg" alt="Team photo" />
+							<picture>
+								<source srcset="./resources/images/people/bryan.webp" type="image/webp" />
+								<img class="content-section__image" src="./resources/images/people/bryan.jpg"
+									alt="Bryan Barragan, Business Development Intern" width="100" height="100" loading="lazy" decoding="async" />
+							</picture>
 							<span class="content-section__image-text-name">Bryan Barragan</span>
 							<span class="content-section__image-text-title">Business Development Intern</span>
 						</div>
 					</div>
+					<button class="carousel-btn carousel-btn--next" aria-label="Next team members" type="button">
+						<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+					</button>
+					<div class="carousel-indicators" role="tablist" aria-label="Team member pages"></div>
 				</div>
 			</div>
 			<div class="content-section section--hidden advisor-section" data-page="4">
 				<h1 class="content-section__title" id="meet-the-team-title">ADVISORS</h1>
-				<div class="content-section__images">
-					<div class="content-section__image-holder">
-						<img class="content-section__image" src="./resources/images/people/bill.jpg" alt="Team photo" />
-						<!-- Add text to the right of the image -->
-						<div class="content-section__image-text">
-							<span class="content-section__image-text-name--bill">Bill Maurer</span>
-							<span class="content-section__image-text-title--bill">Advisor</span>
-							<span class="content-section__image-text-description--bill">Dean, UCI School of Social Sciences</span>
-							<a class="social-links__anchor content-section__image-text-social--bill"
-								href="https://www.linkedin.com/in/billmaurer/">
-							<img class="social-links__image" src="./resources/images/socials/linkedin.svg" alt="Linkedin logo"
-								width="20" height="20">
-							</a>
-							<span class="content-section__image-text-body--bill">Professor Maurer is a cultural anthropologist and
-							sociolegal scholar. His work explores the technological infrastructures and social relations of exchange
-							and payment, from cowries to credit cards and cryptocurrencies. He's interested in the range of
-							technologies people have used throughout history and across cultures to figure value and conduct
-							transactions.</span>
-						</div>
+				<div class="advisor-card">
+					<img class="advisor-card__photo" src="./resources/images/people/bill.jpg"
+						alt="Bill Maurer, faculty advisor" width="240" height="300" loading="lazy" decoding="async" />
+					<div class="advisor-card__body">
+						<h2 class="advisor-card__name">Bill Maurer</h2>
+						<p class="advisor-card__role">Faculty Advisor</p>
+						<p class="advisor-card__affil">Dean, UCI School of Social Sciences</p>
+						<p class="advisor-card__bio">Professor Maurer is a cultural anthropologist and sociolegal
+							scholar. His work explores the technological infrastructures and social relations of
+							exchange and payment, from cowries to credit cards and cryptocurrencies. He's interested
+							in the range of technologies people have used throughout history and across cultures to
+							figure value and conduct transactions.</p>
+						<a class="advisor-card__social" href="https://www.linkedin.com/in/billmaurer/"
+							target="_blank" rel="noopener">
+							<img src="./resources/images/socials/linkedin.svg" alt="" width="18" height="18" />
+							<span>LinkedIn</span>
+						</a>
 					</div>
 				</div>
 			</div>
 			<div class="content-section section--hidden" data-page="5">
 				<h1 class="content-section__title">MAJOR EVENTS</h1>
 				<p class="content-section__text">We've held multiple events in the past and have many planned for the future!</p>
-				<div class="content-portfolio__images_holder">
-					<div class="content-portfolio__images flex">
+				<div class="carousel-container" data-carousel="events">
+					<button class="carousel-btn carousel-btn--prev" aria-label="Previous events" type="button">
+						<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+					</button>
+					<div class="content-portfolio__images_holder carousel-track" id="events-carousel-track">
 						<div class="content-portfolio__image-holder">
 							<span class="content-portfolio__name text-indent">UCI Blockathon</span>
 							<img class="content-portfolio__image" src="./resources/images/events/blockathon2018.jpg"
-								alt="Portfolio image" />
+								alt="UCI Blockathon" />
 						</div>
 						<div class="content-portfolio__image-holder">
 							<span class="content-portfolio__name text-indent">Blockchain Development Day</span>
-							<img class="content-portfolio__image" src="./resources/images/events/devday.jpg" alt="Portfolio image" />
+							<img class="content-portfolio__image" src="./resources/images/events/devday.jpg" alt="Developer Day workshop" loading="lazy" decoding="async" />
 						</div>
-					</div>
-					<div class="content-portfolio__images flex">
 						<div class="content-portfolio__image-holder">
 							<span class="content-portfolio__name text-indent">Women in Blockchain Summit</span>
-							<img class="content-portfolio__image" src="./resources/images/events/women.jpg" alt="Portfolio image" />
+							<img class="content-portfolio__image" src="./resources/images/events/women.jpg" alt="Women in Blockchain event" loading="lazy" decoding="async" />
 						</div>
 						<div class="content-portfolio__image-holder">
 							<span class="content-portfolio__name text-indent">Jason Les Riot Blockchain Panel</span>
-							<img class="content-portfolio__image" src="./resources/images/events/les.jpg" alt="Portfolio image" />
+							<picture>
+								<source srcset="./resources/images/events/les.webp" type="image/webp" />
+								<img class="content-portfolio__image" src="./resources/images/events/les.jpg"
+									alt="Jason Les speaking at the Riot Blockchain panel" loading="lazy" decoding="async" />
+							</picture>
 						</div>
 					</div>
+					<button class="carousel-btn carousel-btn--next" aria-label="Next events" type="button">
+						<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+					</button>
+					<div class="carousel-indicators" role="tablist" aria-label="Event pages"></div>
 				</div>
 			</div>
 			<div class="content-section section--hidden" data-page="6">
 				<h1 class="content-section__title">SPONSORS</h1>
-				<div class="sponsor-logos flex flex--center">
-					<div class="sponsor-logos__logo">
-						<a href="https://chain.link" target="_blank">
-							<img data-follow src="./resources/images/sponsors/chainlink.png" alt="Chainlink logo" width="130" height="33" loading="lazy">
-						</a>
+				<div class="carousel-container" data-carousel="sponsors">
+					<button class="carousel-btn carousel-btn--prev" aria-label="Previous sponsors" type="button">
+						<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+					</button>
+					<div class="logo-wall logo-wall--sponsors carousel-track" id="sponsors-carousel-track">
+						<div class="logo-wall__cell" style="--brand:#4C6CD7;--mw:65.2;--mh:75.2"><a href="https://chain.link" target="_blank" rel="noopener"><span class="logo-wall__mark" style="-webkit-mask-image:url('./resources/images/sponsors/chainlink.svg?v=3');mask-image:url('./resources/images/sponsors/chainlink.svg?v=3')" aria-hidden="true"></span><span class="logo-wall__name">Chainlink</span></a></div>
+						<div class="logo-wall__cell" style="--brand:#8669AE;--mw:70.0;--mh:70.0"><a href="https://www.circle.com" target="_blank" rel="noopener"><span class="logo-wall__mark" style="-webkit-mask-image:url('./resources/images/sponsors/circle.svg?v=3');mask-image:url('./resources/images/sponsors/circle.svg?v=3')" aria-hidden="true"></span><span class="logo-wall__name">Circle</span></a></div>
+						<div class="logo-wall__cell" style="--brand:#9945FF;--mw:75.0;--mh:65.3"><a href="https://solana.com" target="_blank" rel="noopener"><span class="logo-wall__mark" style="-webkit-mask-image:url('./resources/images/sponsors/solana.svg?v=3');mask-image:url('./resources/images/sponsors/solana.svg?v=3')" aria-hidden="true"></span><span class="logo-wall__name">Solana</span></a></div>
+						<div class="logo-wall__cell" style="--brand:#4DA2FF;--mw:59.7;--mh:76"><a href="https://sui.io" target="_blank" rel="noopener"><span class="logo-wall__mark" style="-webkit-mask-image:url('./resources/images/sponsors/sui.svg?v=3');mask-image:url('./resources/images/sponsors/sui.svg?v=3')" aria-hidden="true"></span><span class="logo-wall__name">Sui</span></a></div>
+						<div class="logo-wall__cell" style="--brand:#FF060A;--mw:126.7;--mh:38.7"><a href="https://tron.network/" target="_blank" rel="noopener"><span class="logo-wall__mark" style="-webkit-mask-image:url('./resources/images/sponsors/tron.png?v=3');mask-image:url('./resources/images/sponsors/tron.png?v=3')" aria-hidden="true"></span><span class="logo-wall__name">TRON</span></a></div>
+						<div class="logo-wall__cell" style="--brand:#386BF2;--mw:150.4;--mh:32.6"><a href="https://polymarket.com" target="_blank" rel="noopener"><span class="logo-wall__mark" style="-webkit-mask-image:url('./resources/images/sponsors/polymarket.png?v=3');mask-image:url('./resources/images/sponsors/polymarket.png?v=3')" aria-hidden="true"></span><span class="logo-wall__name">Polymarket</span></a></div>
+						<div class="logo-wall__cell" style="--brand:#8A55E7;--mw:117.4;--mh:41.7"><a href="https://www.standwithcrypto.org" target="_blank" rel="noopener"><span class="logo-wall__mark" style="-webkit-mask-image:url('./resources/images/sponsors/stand-with-crypto.png?v=3');mask-image:url('./resources/images/sponsors/stand-with-crypto.png?v=3')" aria-hidden="true"></span><span class="logo-wall__name">Stand With Crypto</span></a></div>
 					</div>
-					<div class="sponsor-logos__logo">
-						<a href="https://www.circle.com" target="_blank">
-							<img data-follow src="./resources/images/sponsors/circle.png" alt="Circle logo" width="130" height="33" loading="lazy">
-						</a>
-					</div>
-					<div class="sponsor-logos__logo">
-						<a href="https://solana.com" target="_blank">
-							<img data-follow src="./resources/images/sponsors/solana.png" alt="Solana logo" width="130" height="130" loading="lazy">
-						</a>
-					</div>
-					<div class="sponsor-logos__logo">
-						<a href="https://www.standwithcrypto.org" target="_blank">
-							<img data-follow src="./resources/images/sponsors/stand-with-crypto.png" alt="Stand With Crypto logo" width="130" height="69" loading="lazy">
-						</a>
-					</div>
-					<div class="sponsor-logos__logo">
-						<a href="https://sui.io" target="_blank">
-							<img data-follow src="./resources/images/sponsors/sui.png" alt="Sui logo" width="130" height="67" loading="lazy">
-						</a>
-					</div>
-					<div class="sponsor-logos__logo">
-						<a href="https://tron.network/" target="_blank">
-							<img data-follow src="./resources/images/sponsors/tron.png" alt="Tron logo" width="130" height="44" loading="lazy">
-						</a>
-					</div>
-					<div class="sponsor-logos__logo">
-						<a href="https://polymarket.com" target="_blank">
-							<img data-follow src="./resources/images/sponsors/polymarket.png" alt="Polymarket logo" width="130" height="62" loading="lazy">
-						</a>
-					</div>
+					<button class="carousel-btn carousel-btn--next" aria-label="Next sponsors" type="button">
+						<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+					</button>
+					<div class="carousel-indicators" role="tablist" aria-label="Sponsor pages"></div>
 				</div>
 			</div>
-						<div class="content-section section--hidden" data-page="7">
+			<div class="content-section section--hidden" data-page="7">
 				<h1 class="content-section__title">WHERE WE'VE WORKED</h1>
 				<p class="content-section__text">Our members have gone on to intern and work at leading companies across blockchain, finance, and tech.</p>
-				<div class="sponsor-logos sponsor-logos--wrap flex flex--center">
-					<div class="sponsor-logos__logo">
-						<img src="./resources/images/work/amazon.png" alt="Amazon" width="130" height="47" loading="lazy">
+				<div class="carousel-container" data-carousel="work">
+					<button class="carousel-btn carousel-btn--prev" aria-label="Previous companies" type="button">
+						<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+					</button>
+					<div class="logo-wall logo-wall--work carousel-track" id="work-carousel-track">
+						<div class="logo-wall__cell" style="--brand:#FF9900;--mw:60.8;--mh:55.3"><span class="logo-wall__mark" style="-webkit-mask-image:url('./resources/images/work/amazon.svg?v=3');mask-image:url('./resources/images/work/amazon.svg?v=3')" aria-hidden="true"></span><span class="logo-wall__name">Amazon</span></div>
+						<div class="logo-wall__cell" style="--brand:#E8ECF1;--mw:49.0;--mh:60"><span class="logo-wall__mark" style="-webkit-mask-image:url('./resources/images/work/apple.svg?v=3');mask-image:url('./resources/images/work/apple.svg?v=3')" aria-hidden="true"></span><span class="logo-wall__name">Apple</span></div>
+						<div class="logo-wall__cell" style="--brand:#00A4EF;--mw:58.0;--mh:58.0"><span class="logo-wall__mark" style="-webkit-mask-image:url('./resources/images/work/microsoft.svg?v=3');mask-image:url('./resources/images/work/microsoft.svg?v=3')" aria-hidden="true"></span><span class="logo-wall__name">Microsoft</span></div>
+						<div class="logo-wall__cell" style="--brand:#1BA0D7;--mw:79.9;--mh:42.1"><span class="logo-wall__mark" style="-webkit-mask-image:url('./resources/images/work/cisco.svg?v=3');mask-image:url('./resources/images/work/cisco.svg?v=3')" aria-hidden="true"></span><span class="logo-wall__name">Cisco</span></div>
+						<div class="logo-wall__cell" style="--brand:#EB0000;--mw:58.0;--mh:58.0"><span class="logo-wall__mark" style="-webkit-mask-image:url('./resources/images/work/tesla.svg?v=3');mask-image:url('./resources/images/work/tesla.svg?v=3')" aria-hidden="true"></span><span class="logo-wall__name">Tesla</span></div>
+						<div class="logo-wall__cell" style="--brand:#E8ECF1;--mw:93.6;--mh:36.0"><span class="logo-wall__mark" style="-webkit-mask-image:url('./resources/images/work/spacex.svg?v=3');mask-image:url('./resources/images/work/spacex.svg?v=3')" aria-hidden="true"></span><span class="logo-wall__name">SpaceX</span></div>
+						<div class="logo-wall__cell" style="--brand:#F04E23;--mw:68.6;--mh:49.0"><span class="logo-wall__mark" style="-webkit-mask-image:url('./resources/images/work/paloaltonetworks.svg?v=3');mask-image:url('./resources/images/work/paloaltonetworks.svg?v=3')" aria-hidden="true"></span><span class="logo-wall__name">Palo Alto Networks</span></div>
+						<div class="logo-wall__cell" style="--brand:#FF0050;--mw:52.3;--mh:60"><span class="logo-wall__mark" style="-webkit-mask-image:url('./resources/images/work/tiktok.svg?v=3');mask-image:url('./resources/images/work/tiktok.svg?v=3')" aria-hidden="true"></span><span class="logo-wall__name">TikTok</span></div>
+						<div class="logo-wall__cell" style="--brand:#4269EF;--mw:89.0;--mh:37.8"><span class="logo-wall__mark" style="-webkit-mask-image:url('./resources/images/work/disney.png?v=3');mask-image:url('./resources/images/work/disney.png?v=3')" aria-hidden="true"></span><span class="logo-wall__name">Disney</span></div>
+						<div class="logo-wall__cell" style="--brand:#6369DB;--mw:101.9;--mh:33.0"><span class="logo-wall__mark" style="-webkit-mask-image:url('./resources/images/work/visa.svg?v=3');mask-image:url('./resources/images/work/visa.svg?v=3')" aria-hidden="true"></span><span class="logo-wall__name">Visa</span></div>
+						<div class="logo-wall__cell" style="--brand:#D7332A;--mw:96.8;--mh:34.8"><span class="logo-wall__mark" style="-webkit-mask-image:url('./resources/images/work/capital-one.svg.png?v=3');mask-image:url('./resources/images/work/capital-one.svg.png?v=3')" aria-hidden="true"></span><span class="logo-wall__name">Capital One</span></div>
+						<div class="logo-wall__cell" style="--brand:#E8ECF1;--mw:153.8;--mh:21.9"><span class="logo-wall__mark" style="-webkit-mask-image:url('./resources/images/work/blackrock.png?v=3');mask-image:url('./resources/images/work/blackrock.png?v=3')" aria-hidden="true"></span><span class="logo-wall__name">BlackRock</span></div>
+						<div class="logo-wall__cell" style="--brand:#86BC25;--mw:108.0;--mh:31.2"><span class="logo-wall__mark" style="-webkit-mask-image:url('./resources/images/work/deloitte.png?v=3');mask-image:url('./resources/images/work/deloitte.png?v=3')" aria-hidden="true"></span><span class="logo-wall__name">Deloitte</span></div>
+						<div class="logo-wall__cell" style="--brand:#FFE600;--mw:57.3;--mh:58.7"><span class="logo-wall__mark" style="-webkit-mask-image:url('./resources/images/work/ey.svg?v=3');mask-image:url('./resources/images/work/ey.svg?v=3')" aria-hidden="true"></span><span class="logo-wall__name">EY</span></div>
+						<div class="logo-wall__cell" style="--brand:#1F67FF;--mw:136.8;--mh:24.6"><span class="logo-wall__mark" style="-webkit-mask-image:url('./resources/images/work/coinbase.svg?v=3');mask-image:url('./resources/images/work/coinbase.svg?v=3')" aria-hidden="true"></span><span class="logo-wall__name">Coinbase</span></div>
+						<div class="logo-wall__cell" style="--brand:#8669AE;--mw:58.0;--mh:58.0"><span class="logo-wall__mark" style="-webkit-mask-image:url('./resources/images/work/circle.svg?v=3');mask-image:url('./resources/images/work/circle.svg?v=3')" aria-hidden="true"></span><span class="logo-wall__name">Circle</span></div>
+						<div class="logo-wall__cell" style="--brand:#0085C0;--mw:55.5;--mh:60"><span class="logo-wall__mark" style="-webkit-mask-image:url('./resources/images/work/ripple.svg?v=3');mask-image:url('./resources/images/work/ripple.svg?v=3')" aria-hidden="true"></span><span class="logo-wall__name">Ripple</span></div>
+						<div class="logo-wall__cell" style="--brand:#00DCFA;--mw:101.4;--mh:33.2"><span class="logo-wall__mark" style="-webkit-mask-image:url('./resources/images/work/gemini.svg?v=3');mask-image:url('./resources/images/work/gemini.svg?v=3')" aria-hidden="true"></span><span class="logo-wall__name">Gemini</span></div>
 					</div>
-					<div class="sponsor-logos__logo">
-						<img src="./resources/images/work/apple.svg.png" alt="Apple" width="55" height="65" loading="lazy">
-					</div>
-					<div class="sponsor-logos__logo">
-						<img src="./resources/images/work/blackrock.png" alt="Blackstone" width="170" height="25" loading="lazy">
-					</div>
-					<div class="sponsor-logos__logo">
-						<img src="./resources/images/work/capital-one.svg.png" alt="Capital One" width="130" height="50" loading="lazy">
-					</div>
-					<div class="sponsor-logos__logo">
-						<img src="./resources/images/work/coinbase.png" alt="Coinbase" width="130" height="23" loading="lazy">
-					</div>
-					<div class="sponsor-logos__logo">
-						<img src="./resources/images/work/deloitte.png" alt="Deloitte" width="130" height="73" loading="lazy">
-					</div>
-					<div class="sponsor-logos__logo">
-						<img src="./resources/images/work/disney.png" alt="Disney" width="130" height="55" loading="lazy">
-					</div>
-					<div class="sponsor-logos__logo">
-						<img src="./resources/images/work/ripple.png" alt="Ripple" width="130" height="33" loading="lazy">
-					</div>
-					<div class="sponsor-logos__logo">
-						<img src="./resources/images/work/tesla.png" alt="Tesla" width="80" height="80" loading="lazy">
-					</div>
-					<div class="sponsor-logos__logo">
-						<img src="./resources/images/work/tiktok.png" alt="TikTok" width="100" height="67" loading="lazy">
-					</div>
+					<button class="carousel-btn carousel-btn--next" aria-label="Next companies" type="button">
+						<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+					</button>
+					<div class="carousel-indicators" role="tablist" aria-label="Company pages"></div>
 				</div>
 			</div>
 			<div class="content-section section--hidden" data-page="8">
@@ -399,17 +475,18 @@
 					hearing from you. You can also find us on social media below.
 				</p>
 				<a class="content-section__button button button--icon contact__button" href="mailto:blockchainatuci@gmail.com">
-				<img class="button__image" src="./resources/images/icons/email.svg" alt="Email icon" />
-				<span class="button__text">EMAIL US</span>
-				<span class="button__invisible-email">blockchainatuci@gmail.com</span>
+					<img class="button__image" src="./resources/images/icons/email.svg" alt="Email icon" />
+					<span class="button__text">EMAIL US</span>
+					<span class="button__invisible-email">blockchainatuci@gmail.com</span>
 				</a>
+				<span class="contact__email-subtext">blockchainatuci@gmail.com</span>
 				<a class="content-section__button button button--icon contact__button"
-					href="https://www.linkedin.com/company/blockchain-at-uci">
-				<img class="button__image" src="./resources/images/socials/linkedin.svg" alt="Linkedin icon" />
-				<span class="button__text">LINKEDIN</span>
+					href="https://www.linkedin.com/company/blockchain-at-uci" target="_blank" rel="noopener">
+					<img class="button__image" src="./resources/images/socials/linkedin.svg" alt="Linkedin icon" />
+					<span class="button__text">LINKEDIN</span>
 				</a>
-
 			</div>
+		</div> <!-- /content -->
 		</main>
 		<script type="module" src="./main.js"></script>
 	</body>
