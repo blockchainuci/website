@@ -5,6 +5,24 @@ let followElements = []
 let followElementsPositions = []
 let popup = null
 let carousels = []
+let carouselResizeListenerAttached = false
+
+function hydrateTeamPhotos (root = document) {
+  root.querySelectorAll('.team-card__photo[data-src]').forEach(img => {
+    if (img.dataset.loaded === 'true') return
+    const src = img.dataset.src
+    const fallback = img.dataset.fallback
+    if (!src) return
+    img.dataset.loaded = 'true'
+    img.src = src
+    if (fallback) {
+      img.onerror = () => {
+        img.onerror = null
+        img.src = fallback
+      }
+    }
+  })
+}
 
 class Carousel {
   constructor (container) {
@@ -17,6 +35,7 @@ class Carousel {
 
     this.items = Array.from(this.track.children)
     this.pageCount = 0
+    this.slidesPerView = parseInt(container.dataset.slidesPerView || '0', 10) || 0
     this.init()
   }
 
@@ -44,26 +63,33 @@ class Carousel {
       clearTimeout(scrollTid)
       scrollTid = setTimeout(() => this.updateActiveDot(), 40)
     }, { passive: true })
+  }
 
-    window.addEventListener('resize', () => {
-      this.updatePagination()
-      this.updateActiveDot()
-    }, { passive: true })
+  getMaxScroll () {
+    return Math.max(0, this.track.scrollWidth - this.track.clientWidth)
+  }
+
+  computePageCount (maxScroll) {
+    if (this.slidesPerView > 0 && this.items.length > this.slidesPerView) {
+      return Math.ceil(this.items.length / this.slidesPerView)
+    }
+    const trackWidth = this.track.clientWidth
+    const scrollWidth = this.track.scrollWidth
+    const rawPages = Math.round(scrollWidth / (trackWidth * 0.75))
+    return Math.min(this.items.length, Math.max(2, Math.min(8, rawPages)))
   }
 
   updatePagination () {
     if (!this.indicators) return
-    this.indicators.innerHTML = ''
 
-    const trackWidth = this.track.clientWidth
-    const scrollWidth = this.track.scrollWidth
-    const maxScroll = scrollWidth - trackWidth
+    const maxScroll = this.getMaxScroll()
 
     if (maxScroll <= 10) {
       this.indicators.style.display = 'none'
       if (this.prevBtn) this.prevBtn.style.display = 'none'
       if (this.nextBtn) this.nextBtn.style.display = 'none'
       this.pageCount = 0
+      if (this.indicators.childElementCount) this.indicators.innerHTML = ''
       return
     }
 
@@ -71,9 +97,13 @@ class Carousel {
     if (this.prevBtn) this.prevBtn.style.display = 'flex'
     if (this.nextBtn) this.nextBtn.style.display = 'flex'
 
-    // Number of dots: for short lists use item count, for long lists use proportional steps
-    const rawPages = Math.round(scrollWidth / (trackWidth * 0.75))
-    this.pageCount = Math.min(this.items.length, Math.max(2, Math.min(8, rawPages)))
+    const nextPageCount = this.computePageCount(maxScroll)
+    if (nextPageCount === this.pageCount && this.indicators.childElementCount === nextPageCount) {
+      return
+    }
+
+    this.pageCount = nextPageCount
+    this.indicators.innerHTML = ''
 
     for (let i = 0; i < this.pageCount; i++) {
       const dot = document.createElement('button')
@@ -83,7 +113,9 @@ class Carousel {
       dot.addEventListener('click', (e) => {
         e.preventDefault()
         e.stopPropagation()
-        const targetScroll = maxScroll * (i / (this.pageCount - 1))
+        const targetScroll = this.pageCount <= 1
+          ? 0
+          : maxScroll * (i / (this.pageCount - 1))
         this.track.scrollTo({ left: targetScroll, behavior: 'smooth' })
       })
       this.indicators.appendChild(dot)
@@ -109,7 +141,12 @@ class Carousel {
   }
 
   scrollStep (direction) {
-    const scrollAmount = Math.max(160, this.track.clientWidth * 0.75)
+    let scrollAmount = Math.max(160, this.track.clientWidth * 0.75)
+    if (this.slidesPerView > 0 && this.items[0]) {
+      const trackStyle = getComputedStyle(this.track)
+      const gap = parseFloat(trackStyle.columnGap || trackStyle.gap || '0') || 0
+      scrollAmount = (this.items[0].offsetWidth + gap) * this.slidesPerView
+    }
     const delta = direction === 'next' ? scrollAmount : -scrollAmount
     this.track.scrollBy({ left: delta, behavior: 'smooth' })
   }
@@ -193,6 +230,20 @@ export default class UI {
     containers.forEach(container => {
       carousels.push(new Carousel(container))
     })
+
+    if (!carouselResizeListenerAttached) {
+      carouselResizeListenerAttached = true
+      let resizeTid
+      window.addEventListener('resize', () => {
+        clearTimeout(resizeTid)
+        resizeTid = setTimeout(() => {
+          carousels.forEach(carousel => {
+            carousel.updatePagination()
+            carousel.updateActiveDot()
+          })
+        }, 120)
+      }, { passive: true })
+    }
   }
 
   ui_moveEvent (e, Use2DTextOver3D) {
@@ -315,6 +366,10 @@ export default class UI {
       if (isActive) {
         section.style.display = 'flex'
         section.scrollTop = 0
+
+        if (+section.dataset.page === 3) {
+          hydrateTeamPhotos(section)
+        }
 
         const updateTrack = () => {
           const track = section.querySelector('.carousel-track')
