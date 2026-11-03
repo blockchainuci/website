@@ -11,7 +11,6 @@
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap">
 		<link type="text/css" rel="stylesheet" href="./styles/main.css" />
-		<link type="text/css" rel="stylesheet" href="./styles/slider.css" />
 		<link type="text/css" rel="stylesheet" href="./styles/components.css" />
 		<link rel="icon" type="image/png" sizes="32x32" href="./resources/favicon-32.png" />
 		<link rel="apple-touch-icon" sizes="180x180" href="./resources/apple-touch-icon.png" />
@@ -67,7 +66,7 @@
 			    m = f.getElementsByTagName('script')[0];
 			  o.async = 1; o.src = t; o.id = 'fathom-script';
 			  m.parentNode.insertBefore(o, m)
-			})(document, window, '//fathom.t1c.dev/tracker.js', 'fathom');
+			})(document, window, 'https://fathom.t1c.dev/tracker.js', 'fathom');
 			fathom('set', 'siteId', 'HFPFQ');
 			fathom('trackPageview');
 		</script>
@@ -94,22 +93,22 @@
 					<li class="menu-list__item" data-page="8" role="button" tabindex="0">CONTACT US</li>
 				</ul>
 			</div>
-			<!-- VIDEO POPUP -->
+			<!-- NEWSLETTER POPUP -->
 			<div class="popup" data-popup="video">
-				<button class="popup__close-button" aria-label="Close signup form" type="button">×</button>
-				<iframe width="60%" height="100%" title="Signup form"
-					src="https://5baa06fa.sibforms.com/serve/MUIEAAq85cwSjG9N9sLFqFUSr-rV3dFeMqmlMomGnfPAkSgJ30FUytIK3cEYmoyWfk613vKopO3hWXpo4QAFy-pD5q_ZmIkuSPTRnZzboh-rltBayzxCJXbggRWYpKuWxDO-UBTFnDbemOCDHx6JfJL6h8wTIPrNSPiOx4e-P5rYi721V10WjgcfPaW3cm31yh6sfbRPEcAMUl7G"></iframe>
+				<button class="popup__close-button" aria-label="Close newsletter signup" type="button">×</button>
+				<iframe width="60%" height="100%" title="Blockchain at UCI newsletter signup"
+					data-src="https://5baa06fa.sibforms.com/serve/MUIEAAq85cwSjG9N9sLFqFUSr-rV3dFeMqmlMomGnfPAkSgJ30FUytIK3cEYmoyWfk613vKopO3hWXpo4QAFy-pD5q_ZmIkuSPTRnZzboh-rltBayzxCJXbggRWYpKuWxDO-UBTFnDbemOCDHx6JfJL6h8wTIPrNSPiOx4e-P5rYi721V10WjgcfPaW3cm31yh6sfbRPEcAMUl7G"></iframe>
 			</div>
 			<!-- ALL FIXED CONTENT (EG. HEADER, FOOTER) -->
 			<!-- HEADER -->
 			<header class="fixed-content-header">
 				<div class="header-nav-group flex flex--center">
-					<button class="burger" aria-label="Toggle navigation menu" type="button" data-follow>
+					<button class="burger" aria-label="Toggle navigation menu" aria-expanded="false" type="button" data-follow>
 						<span class="burger__line"></span>
 						<span class="burger__line"></span>
 						<span class="burger__line"></span>
 					</button>
-					<a href="#" class="header-logo-link flex flex--center" data-page="0" aria-label="Blockchain at UCI Home">
+					<a href="/" class="header-logo-link flex flex--center" data-page="0" aria-label="Blockchain at UCI Home">
 						<img src="./resources/logo.png" class="header-logo" alt="Blockchain at UCI Logo" />
 					</a>
 				</div>
@@ -162,6 +161,7 @@
 			<!-- MAIN CONTENT -->
 			<div class="content" id="main-content" tabindex="-1">
 				<div class="content-section" data-page="0">
+					<h1 class="sr-only">Blockchain at UCI</h1>
 					<div class="configuration__letters configuration__letters--hidden">
 						<span class="configuration__letters-text">BLOCKCHAIN at UCI</span>
 					</div>
@@ -198,7 +198,7 @@
 					</p>
 					<div class="content-services">
 						<div class="content-services__service">
-							<img class="content-service__image" src="./resources/images/icons/boba.svg" alt="Marketing icon" />
+							<img class="content-service__image" src="./resources/images/icons/boba.svg" alt="Meetings icon" />
 							<span class="content-service__text">MEETINGS</span>
 							<ul class="extended-services">
 								<li class="extended-services__service">General meetings</li>
@@ -207,7 +207,7 @@
 							</ul>
 						</div>
 						<div class="content-services__service">
-							<img class="content-service__image" src="./resources/images/icons/marketing.svg" alt="Marketing icon" />
+							<img class="content-service__image" src="./resources/images/icons/marketing.svg" alt="Speakers icon" />
 							<span class="content-service__text">SPEAKERS</span>
 							<ul class="extended-services">
 								<li class="extended-services__service">Established<br>leaders</li>
@@ -215,7 +215,7 @@
 							</ul>
 						</div>
 						<div class="content-services__service">
-							<img class="content-service__image" src="./resources/images/icons/education.svg" alt="Marketing icon" />
+							<img class="content-service__image" src="./resources/images/icons/education.svg" alt="Education icon" />
 							<span class="content-service__text">EDUCATION</span>
 							<ul class="extended-services">
 								<li class="extended-services__service">Workshops</li>
@@ -224,7 +224,7 @@
 							</ul>
 						</div>
 						<div class="content-services__service">
-							<img class="content-service__image" src="./resources/images/icons/research.svg" alt="Marketing icon" />
+							<img class="content-service__image" src="./resources/images/icons/research.svg" alt="Opportunity icon" />
 							<span class="content-service__text">OPPORTUNITY</span>
 							<ul class="extended-services">
 								<li class="extended-services__service">Internships</li>
@@ -235,7 +235,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="content-section section--hidden content-section" data-page="3">
+				<div class="content-section section--hidden" data-page="3">
 					<h1 class="content-section__title">MEET THE TEAM</h1>
 					<div class="carousel-container" data-carousel="team">
 						<button class="carousel-btn carousel-btn--prev" aria-label="Previous team members" type="button">
@@ -358,7 +358,7 @@
 				</div>
 			</div>
 			<div class="content-section section--hidden advisor-section" data-page="4">
-				<h1 class="content-section__title" id="meet-the-team-title">ADVISORS</h1>
+				<h1 class="content-section__title" id="advisors-title">ADVISORS</h1>
 				<div class="advisor-card">
 					<img class="advisor-card__photo" src="./resources/images/people/bill.jpg"
 						alt="Bill Maurer, faculty advisor" width="240" height="300" loading="lazy" decoding="async" />
@@ -390,7 +390,7 @@
 						<div class="content-portfolio__image-holder">
 							<span class="content-portfolio__name text-indent">UCI Blockathon</span>
 							<img class="content-portfolio__image" src="./resources/images/events/blockathon2018.jpg"
-								alt="UCI Blockathon" />
+								alt="UCI Blockathon" loading="lazy" decoding="async" />
 						</div>
 						<div class="content-portfolio__image-holder">
 							<span class="content-portfolio__name text-indent">Blockchain Development Day</span>

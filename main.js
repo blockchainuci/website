@@ -4,7 +4,7 @@ const configuration = {
   Use2DTextOver3D: false, // Change to true if you want 2D over 3D
   SiteNameSize: window.innerWidth > 600 ? 0.45 : 0.65, // Between 0 and +
   NumberOfVerticalLines: 20,
-  NumberOfDots: 2000,
+  NumberOfDots: 1000,
   colors: {
     CanvasBackgroundColor: '#0A0F18',
     LettersColor: '#FFD200',
@@ -35,11 +35,23 @@ let mainLettersMesh
 
 let touchStartPosition
 let pendingMouseEvent = null
+let animationPaused = false
+let use2DHero = false
+
+function markPageReady () {
+  document.querySelector('.ui-wrapper')?.classList.remove('page-not-loaded')
+}
+
+function shouldUse2DHero () {
+  return window.matchMedia('(prefers-reduced-motion: reduce)').matches || isMobile()
+}
+
+document.addEventListener('visibilitychange', () => {
+  animationPaused = document.hidden
+})
 
 // Wait for page to load
 window.addEventListener('load', () => {
-  const uiWrapper = document.querySelector('.ui-wrapper')
-  uiWrapper.classList.remove('page-not-loaded')
   // Loading animation lasts for 1s;
   setTimeout(() => {
     init()
@@ -48,6 +60,21 @@ window.addEventListener('load', () => {
 })
 
 function init() {
+  use2DHero = configuration.Use2DTextOver3D || shouldUse2DHero()
+
+  window.addEventListener('resize', windowResize, false)
+  window.addEventListener('wheel', onWheel, { passive: true })
+  window.addEventListener('keydown', windowKeydown, false)
+  window.addEventListener('touchstart', onTouchStart, { passive: true })
+  window.addEventListener('touchend', onTouchEnd, { passive: true })
+  if (!isMobile()) window.addEventListener('mousemove', mouseMove, false)
+
+  if (use2DHero) {
+    loadMain2DLetters()
+    markPageReady()
+    return
+  }
+
   camera = new THREE.PerspectiveCamera(55, window.innerWidth / window.innerHeight, 2, 20000)
   camera.position.z = 20
 
@@ -57,39 +84,28 @@ function init() {
   const far = 150
   scene.fog = new THREE.Fog(configuration.colors.CanvasBackgroundColor, near, far)
 
-  // Load main letters and generate random lines.
-  if (!configuration.Use2DTextOver3D) {
-    loadMainLetters()
-  } else {
-    loadMain2DLetters()
-  }
+  loadMainLetters()
   for (let index = 0; index < configuration.NumberOfVerticalLines; index++) {
     generateRandomObject(1, [[0.2, 2, 4, 5], [0.1, 0.2]], configuration.colors.LinesColors)
-    // Generate few random objects per page.
     generateRandomObject(-windowHeightInRadians * index / 3, [[2, 4], [0.05]], configuration.colors.LowerLinesColors)
   }
 
-  renderer = new THREE.WebGLRenderer({antialiasing:true});
+  renderer = new THREE.WebGLRenderer({ antialias: true })
   renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
   renderer.setSize(window.innerWidth, window.innerHeight)
   document.body.appendChild(renderer.domElement)
-
-  // Add listeners.
-  window.addEventListener('resize', windowResize, false)
-  window.addEventListener('wheel', onWheel, { passive: true })
-  window.addEventListener('keydown', windowKeydown, false)
-  window.addEventListener('touchstart', onTouchStart, { passive: true })
-  window.addEventListener('touchend', onTouchEnd, { passive: true })
-  if (!isMobile()) window.addEventListener('mousemove', mouseMove, false)
 }
 
 function animate (time) {
   requestAnimationFrame(animate)
+  if (animationPaused) return
   TWEEN.update()
   render(time)
 }
 
 function render (time) {
+  if (!renderer) return
+
   time = time / 1000
 
   if (mainLettersMesh) mainLettersMesh.material.uniforms.time.value = time
@@ -170,24 +186,12 @@ function loadMainLetters () {
     const points = new THREE.Points(bufferGeometry, pointsMaterial)
     scene.add(points)
 
-
-    // const bufferGeometry = new THREE.BufferGeometry()
-    // bufferGeometry.setAttribute('position', new THREE.Float32BufferAttribute(vertices, 3))
-    // // const pointSprite = new THREE.TextureLoader().load('resources/images/icons/pointImg.png')
-    // const racaPointSprite = new THREE.TextureLoader().load('resources/images/sponsors/raca.png')
-    // const racaPointsMaterial = new THREE.PointsMaterial({size: 0.7, map: racaPointSprite, transparent: true, alphaTest: 0.5})
-    // const racaPoints = new THREE.Points(bufferGeometry, racaPointsMaterial)
-    // const tronPointSprite = new THREE.TextureLoader().load('resources/images/sponsors/tron.png')
-    // const tronPointsMaterial = new THREE.PointsMaterial({size: 0.7, map: tronPointSprite, transparent: true, alphaTest: 0.5})
-    // const tronPoints = new THREE.Points(bufferGeometry, tronPointsMaterial)
-    // const expoversePointSprite = new THREE.TextureLoader().load('resources/images/sponsors/expoverse.png')
-    // const expoversePointsMaterial = new THREE.PointsMaterial({size: 0.7, map: expoversePointSprite, transparent: true, alphaTest: 0.5})
-    // const expoversePoints = new THREE.Points(bufferGeometry, expoversePointsMaterial)
-    // scene.add(racaPoints)
-    // scene.add(tronPoints)
-    // scene.add(expoversePoints)
-
     windowResize()
+    markPageReady()
+  }, undefined, () => {
+    use2DHero = true
+    loadMain2DLetters()
+    markPageReady()
   })
 }
 
@@ -340,6 +344,7 @@ function uiCallback () {
 // **** EVENT FUNCTIONS **** //
 
 function moveScene () {
+  if (!scene) return
   new TWEEN.Tween(scene.position)
   .to({x: scene.position.x, y: sceneMovedAmmount * windowHeightInRadians, z: scene.position.z}, 1000)
   .easing(TWEEN.Easing.Quartic.InOut)
@@ -364,6 +369,7 @@ function getResponsiveTextScale () {
 }
 
 function windowResize () {
+  if (!renderer) return
   if (mainLettersMesh) {
     const scale = getResponsiveTextScale()
     mainLettersMesh.scale.set(scale, scale, scale)
@@ -472,6 +478,6 @@ function windowKeydown (e) {
 }
 
 function mouseMove (e) {
-  ui.ui_moveEvent(e, configuration.Use2DTextOver3D)
+  ui.ui_moveEvent(e, use2DHero)
   pendingMouseEvent = e
 }

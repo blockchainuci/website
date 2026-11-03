@@ -1,5 +1,7 @@
 const uiWrapper = document.querySelector('.ui-wrapper')
 
+const NEWSLETTER_IFRAME_SRC = 'https://5baa06fa.sibforms.com/serve/MUIEAAq85cwSjG9N9sLFqFUSr-rV3dFeMqmlMomGnfPAkSgJ30FUytIK3cEYmoyWfk613vKopO3hWXpo4QAFy-pD5q_ZmIkuSPTRnZzboh-rltBayzxCJXbggRWYpKuWxDO-UBTFnDbemOCDHx6JfJL6h8wTIPrNSPiOx4e-P5rYi721V10WjgcfPaW3cm31yh6sfbRPEcAMUl7G'
+
 let constructorCb = null
 let followElements = []
 let followElementsPositions = []
@@ -132,7 +134,7 @@ export default class UI {
     const events = [
       { selector: '.burger', cb: this.toggleMenu.bind(this) },
       { selector: '.header-logo-link', cb: this.onPagingClick.bind(this) },
-      { selector: '.fixed-content-header__contact', cb: this.onPagingClick.bind(this) },
+      { selector: '.fixed-content-header__contact button[data-page]', cb: this.onPagingClick.bind(this) },
       { selector: '.fixed-content-paging', cb: this.onPagingClick.bind(this) },
       { selector: '.menu-list', cb: this.onMenuPagingClick.bind(this) },
       { selector: '#button_email_list', cb: this.showPopup.bind(this, 'video') }
@@ -237,6 +239,10 @@ export default class UI {
   showPopup (popupType) {
     popup = uiWrapper.querySelector(`[data-popup=${popupType}]`)
     if (!popup) return
+    const iframe = popup.querySelector('iframe')
+    if (iframe && !iframe.getAttribute('src')) {
+      iframe.src = iframe.dataset.src || NEWSLETTER_IFRAME_SRC
+    }
     popup.classList.add('popup--active')
     popup.addEventListener('click', this.handleBackdropClick.bind(this))
     constructorCb().blockSceneScrolling(true)
@@ -250,8 +256,10 @@ export default class UI {
 
   closePopup () {
     if (!popup) return
+    const iframe = popup.querySelector('iframe')
     popup.classList.remove('popup--active')
     popup.removeEventListener('click', this.handleBackdropClick.bind(this))
+    if (iframe) iframe.removeAttribute('src')
     constructorCb().blockSceneScrolling(false)
   }
 
@@ -278,6 +286,8 @@ export default class UI {
   onPagingClick (e) {
     const target = e.target.closest('[data-page]')
     if (!target) return
+    const anchor = target.closest('a')
+    if (anchor) e.preventDefault()
     const datasetPage = +target.dataset.page
     if (datasetPage >= 0) {
       constructorCb().onPagingClick(datasetPage)
