@@ -15,9 +15,15 @@ class Carousel {
     this.indicators = container.querySelector('.carousel-indicators')
     if (!this.track) return
 
-    this.items = Array.from(this.track.children)
+    this.items = this.getScrollItems()
     this.pageCount = 0
     this.init()
+  }
+
+  getScrollItems () {
+    const teamMembers = this.track.querySelectorAll('.content-section__image-holder')
+    if (teamMembers.length) return Array.from(teamMembers)
+    return Array.from(this.track.children)
   }
 
   init () {
@@ -54,6 +60,7 @@ class Carousel {
   updatePagination () {
     if (!this.indicators) return
     this.indicators.innerHTML = ''
+    this.items = this.getScrollItems()
 
     const trackWidth = this.track.clientWidth
     const scrollWidth = this.track.scrollWidth
